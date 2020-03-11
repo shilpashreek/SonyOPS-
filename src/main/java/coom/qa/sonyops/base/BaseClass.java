@@ -18,32 +18,31 @@ public static WebDriver driver;
 public static Properties prop;
 
 
-     public BaseClass()    //constructor of Base class
-     {
-    	 //read data from config file
-        Properties prop=new Properties();
-        try 
-        {
-			FileInputStream fis = new FileInputStream("D:/PFTprojects/sonyops/src/main/java/com/qa/sonyops/configuration/config.properties");
-			prop.load(fis);
-		} 
-        catch (FileNotFoundException e)
-        {
-			e.printStackTrace();
-		} 
-        catch (IOException e) 
-        {
-			e.printStackTrace();
-		}
-        
-        
-     }
+     public BaseClass() 
+     {	 //read data from config file
+      
+	try {
+		  prop=new Properties();
+	      FileInputStream fis;
+		  fis = new FileInputStream("D:\\PFTprojects\\sonyops\\src\\main\\java\\com\\qa\\sonyops\\configuration\\config.properties");
+		  prop.load(fis);
+	    } 
+	catch (FileNotFoundException e)  
+	{ 
+		e.printStackTrace();
+	} 
+	catch (IOException e) 
+	{
+		e.printStackTrace();
+	}
+	  
+  }
 
-     //initialisation method-To get the details of my browser
+     //Initialization method-To get the details of my browser
      public static void initialisation()
      {
     	String browserName = prop.getProperty("browser");
-    	System.out.println("Selected browser is" +browserName);
+    	System.out.println("Selected browser is" + " " + browserName);
     	if(browserName.equals("chrome"))
     	{
     		System.setProperty("webdriver.chrome.driver", "C:/Users/shilpashree.k/Downloads/drivers/chromedriver.exe");

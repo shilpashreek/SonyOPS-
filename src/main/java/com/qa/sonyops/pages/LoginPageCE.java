@@ -10,16 +10,20 @@ public class LoginPageCE extends BaseClass //defining pageafactory or object rep
 {
 
 	//webelements
-@FindBy(name="x-username")
-WebElement username;
+@FindBy(id="x-user")
+WebElement Sonyopsusername;
 
 @FindBy(xpath="//div[@id='ContinueText']")
 WebElement continuebtn;
 
 @FindBy(name="x-password")  ////div[.='Login']
-WebElement password;
+WebElement Sonyopspassword;
 
-@FindBy(xpath="//input[@class='loginButton']")
+	/*
+	 * @FindBy(xpath="//input[@id='0xSignIn']") WebElement Loginbtn;
+	 */
+
+@FindBy(xpath = "//input[@name='0xSignIn']")
 WebElement Loginbtn;
 
 @FindBy(xpath="//a[.='Back']")
@@ -37,7 +41,7 @@ WebElement copyright;
 //initialize the webelements
 public LoginPageCE()
 {
-	PageFactory.initElements(driver, this);   //this-cuurent class objects or loginpage.class
+	PageFactory.initElements(driver, this);   //this-crurent class objects or loginpage.class
 }
 
 //different actions available on login page
@@ -52,18 +56,20 @@ public boolean ValidateLogo()
 	
 }
 
-public HomePageCE login(String un, String pwd)
+public HomePageCE login(String username, String password)
 {
-	username.sendKeys(un);
-	continuebtn.click();
-	password.sendKeys(pwd);  //on clicking on login button , user will be landing to Home page, 
-	Loginbtn.click();        //so return type of this login method should be HomePage class object
-	return new HomePageCE();       // return new HomePage()
+	Sonyopsusername.sendKeys(username);
+	continuebtn.submit();
+	Sonyopspassword.sendKeys(password);  //on clicking on login button , user will be landing to Home page, 
+	Loginbtn.submit();                  //so return type of this login method should be HomePage class object
+	return new HomePageCE();       // returns HomePage object i.e., new HomePage()
 }
 
 public String CopyRighttext()
 {
-	return copyright.getText();
+	 String CopyrightText = copyright.getText();
+	 System.out.println(CopyrightText);
+	 return CopyrightText; 
 	
 }
 
