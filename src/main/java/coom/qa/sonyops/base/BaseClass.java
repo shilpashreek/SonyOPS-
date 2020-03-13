@@ -11,11 +11,13 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 import com.qa.sonyops.util.TestUtil;
+import com.qa.sonyops.util.WebEventListener;
 
 public class BaseClass 
 {
 public static WebDriver driver;
 public static Properties prop;
+static WebEventListener eventlistener;
 
 
      public BaseClass() 
@@ -57,6 +59,9 @@ public static Properties prop;
     	{
     		System.out.println("no browser value is given");
     	}
+    	
+    	eventlistener=new WebEventListener();
+    	
     	
         driver.manage().window().maximize();
         driver.manage().timeouts().pageLoadTimeout(TestUtil.PAGE_LOAD_TIMEOUT, TimeUnit.SECONDS);  //if application is taking too much of time then we have to increase the time in every script to avoid that will create on util class

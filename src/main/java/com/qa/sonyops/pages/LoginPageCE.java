@@ -70,7 +70,6 @@ public String CopyRighttext()
 	 String CopyrightText = copyright.getText();
 	 System.out.println(CopyrightText);
 	 return CopyrightText; 
-	
 }
 
 }
