@@ -3,18 +3,21 @@ package com.qa.sonyops.testcases;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
+import com.qa.sonyops.base.BaseClass;
 import com.qa.sonyops.pages.HomePageCE;
 import com.qa.sonyops.pages.LoginPageCE;
-
-import coom.qa.sonyops.base.BaseClass;
+import com.qa.sonyops.util.TestUtil;
 
 public class LoginPageCETest extends BaseClass
 {
 	static BaseClass baseclass;
 	static LoginPageCE logince;
 	static HomePageCE  homece;
+	TestUtil testutil;
+	String Sheetname = "LoginCredentials";
 	
   public LoginPageCETest()
   {
@@ -24,12 +27,13 @@ public class LoginPageCETest extends BaseClass
 @BeforeMethod
 public void initialization()
 {
-	initialisation();
+	baseclass=new BaseClass();
+	initialisation("ce_url");
 	logince=new LoginPageCE();
 	
 }
 
-@Test(priority=0)
+@Test(priority=0 , enabled=false)
 public void ValidateClearLogoisDisplayedinLoginPage()
 {
 	boolean b = logince.ValidateLogo();
@@ -37,7 +41,7 @@ public void ValidateClearLogoisDisplayedinLoginPage()
 	Assert.assertTrue(true);
 }
 
-@Test(priority=1)
+@Test(priority=1 , enabled=false)
 public void ValidateLoginPageTitle()
 {
 	String loginpagetitle = logince.ValidateLoginPageTitle();
@@ -45,16 +49,34 @@ public void ValidateLoginPageTitle()
 	Assert.assertEquals(loginpagetitle, "Clear EDGE", "LoginPage title is not matching with the expected result");
 }
 
-@Test(priority=2)
-public void ValidateLoginToCEportal()
+@DataProvider
+public Object[][] getCELoginData()
 {
-	homece=logince.login(prop.getProperty("username"), prop.getProperty("password"));
+	testutil =new TestUtil();
+	Object[][] Ce_login_data = testutil.GetData(Sheetname);
+	return Ce_login_data;
+}
+
+@Test(priority=2 , dataProvider="getCELoginData")
+public void ValidateLoginToCEportal(String username , String password)
+{
+	homece=logince.login(username, password);
 	String homepagetile = driver.getTitle();
 	System.out.println("Login is successful" +homepagetile);
 	Assert.assertEquals(homepagetile, "SonyOPS Clear EDGE", "Home page is not displayed");
 }
 
+@Test(priority=3 , enabled=false)
+public void ValidateCopyRightTextOnLoginPage()
+{
+	logince.CopyRighttext();
+}
 
+@Test(priority=4 , enabled=false)
+public void ValidateLinksOnLoginPage()
+{
+	logince.GetTotalLinks();
+}
 @AfterMethod
 public void tearDown()
 {

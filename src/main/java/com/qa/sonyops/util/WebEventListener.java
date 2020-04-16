@@ -6,7 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.events.WebDriverEventListener;
 
-import coom.qa.sonyops.base.BaseClass;
+import com.qa.sonyops.base.BaseClass;
 
 public class WebEventListener extends BaseClass implements WebDriverEventListener
 {
@@ -37,13 +37,13 @@ public class WebEventListener extends BaseClass implements WebDriverEventListene
 
 	public void beforeNavigateTo(String url, WebDriver driver) 
 	{
-		// TODO Auto-generated method stub
+	   System.out.println(" Before Navigating to :" + url + " ' ");
 		
 	}
 
 	public void afterNavigateTo(String url, WebDriver driver)
 	{
-		// TODO Auto-generated method stub
+		System.out.println("Navigated to : " + url + " ' ");
 		
 	}
 
@@ -95,24 +95,24 @@ public class WebEventListener extends BaseClass implements WebDriverEventListene
 	}
 
 	public void beforeClickOn(WebElement element, WebDriver driver) {
-		// TODO Auto-generated method stub
+		//System.out.println("trying to click on:" +element.toString());
 		
 	}
 
 	public void afterClickOn(WebElement element, WebDriver driver) 
 	{
-		// TODO Auto-generated method stub
+		//System.out.println("Clicked on:" +element.toString());
 		
 	}
 
 	public void beforeChangeValueOf(WebElement element, WebDriver driver, CharSequence[] keysToSend) 
 	{
-		// TODO Auto-generated method stub
+		//System.out.println("Value of the :" +element.toString()   + "before any changes made");
 		
 	}
 
 	public void afterChangeValueOf(WebElement element, WebDriver driver, CharSequence[] keysToSend) {
-		// TODO Auto-generated method stub
+		//System.out.println("Element value changed to :"  +element.toString());
 		
 	}
 
@@ -130,7 +130,7 @@ public class WebEventListener extends BaseClass implements WebDriverEventListene
 
 	public void beforeSwitchToWindow(String windowName, WebDriver driver) 
 	{
-		// TODO Auto-generated method stub
+		//System.out.println("Current window name" +windowName.toString());
 		
 	}
 
@@ -140,9 +140,17 @@ public class WebEventListener extends BaseClass implements WebDriverEventListene
 		
 	}
 
-	public void onException(Throwable throwable, WebDriver driver)
+	public void onException(Throwable error, WebDriver driver)
 	{
-		// TODO Auto-generated method stub
+		//add screenshot method to take screenshot on any exceptions
+		System.out.println("Exception is throwed" +error);
+		try {
+			TestUtil.ScreenShotOnException();
+		}catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+		
 		
 	}
 
@@ -160,13 +168,13 @@ public class WebEventListener extends BaseClass implements WebDriverEventListene
 
 	public void beforeGetText(WebElement element, WebDriver driver) 
 	{
-		// TODO Auto-generated method stub
+		//System.out.println("Trying to get the text:" +element.toString());
 		
 	}
 
 	public void afterGetText(WebElement element, WebDriver driver, String text) 
 	{
-		// TODO Auto-generated method stub
+		//System.out.println("Extracted text successfully from" +element.toString() +" " +text.toString() );
 		
 	}
 

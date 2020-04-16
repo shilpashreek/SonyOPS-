@@ -5,9 +5,12 @@ import java.util.List;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.testng.annotations.Listeners;
 
-import coom.qa.sonyops.base.BaseClass;
+import com.qa.sonyops.base.BaseClass;
+import com.qa.sonyops.util.TestNGListeners;
 
+@Listeners(TestNGListeners.class)
 public class Plugin_DownloadsPage extends BaseClass
 {
 @FindBy(id = "PluginDownloads_title_holder")

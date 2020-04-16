@@ -3,9 +3,12 @@ package com.qa.sonyops.pages;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.annotations.Listeners;
 
-import coom.qa.sonyops.base.BaseClass;
+import com.qa.sonyops.base.BaseClass;
+import com.qa.sonyops.util.TestNGListeners;
 
+@Listeners(TestNGListeners.class)
 public class CEuploadPage extends BaseClass 
 {
    @FindBy(id = "CEUploadPopup_title_holder")

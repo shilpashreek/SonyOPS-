@@ -1,49 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results total="3" passed="3" failed="0" skipped="0">
+<testng-results total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2020-03-11T11:18:47Z" name="Default suite" finished-at="2020-03-11T11:19:20Z" duration-ms="32990">
+  <suite started-at="2020-04-16T08:55:04Z" name="Default suite" finished-at="2020-04-16T08:55:45Z" duration-ms="40621">
     <groups>
     </groups>
-    <test started-at="2020-03-11T11:18:47Z" name="Default test" finished-at="2020-03-11T11:19:20Z" duration-ms="32990">
-      <class name="com.qa.sonyops.testcases.LoginPageCETest">
-        <test-method is-config="true" signature="initialization()[pri:0, instance:com.qa.sonyops.testcases.LoginPageCETest@2145433b]" started-at="2020-03-11T16:48:47Z" name="initialization" finished-at="2020-03-11T16:48:57Z" duration-ms="9937" status="PASS">
+    <test started-at="2020-04-16T08:55:04Z" name="Default test" finished-at="2020-04-16T08:55:45Z" duration-ms="40621">
+      <class name="com.qa.sonyops.testcases.CatalogPlayerPageTest">
+        <test-method is-config="true" signature="SetUp()[pri:0, instance:com.qa.sonyops.testcases.CatalogPlayerPageTest@13b6aecc]" started-at="2020-04-16T14:25:04Z" name="SetUp" finished-at="2020-04-16T14:25:37Z" duration-ms="32226" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- initialization -->
-        <test-method signature="ValidateClearLogoisDisplayedinLoginPage()[pri:0, instance:com.qa.sonyops.testcases.LoginPageCETest@2145433b]" started-at="2020-03-11T16:48:57Z" name="ValidateClearLogoisDisplayedinLoginPage" finished-at="2020-03-11T16:48:57Z" duration-ms="67" status="PASS">
+        </test-method> <!-- SetUp -->
+        <test-method signature="ValidateEnteringDataInEpisodeStrata(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.qa.sonyops.testcases.CatalogPlayerPageTest@13b6aecc]" started-at="2020-04-16T14:25:37Z" name="ValidateEnteringDataInEpisodeStrata" data-provider="getEpisodeStrataData" finished-at="2020-04-16T14:25:44Z" duration-ms="7671" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[PFT-Test]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[  '5]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Pft test ingest]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Test]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[PFT test asset, please ignore]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- ValidateClearLogoisDisplayedinLoginPage -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.qa.sonyops.testcases.LoginPageCETest@2145433b]" started-at="2020-03-11T16:48:57Z" name="tearDown" finished-at="2020-03-11T16:48:58Z" duration-ms="938" status="PASS">
+        </test-method> <!-- ValidateEnteringDataInEpisodeStrata -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:com.qa.sonyops.testcases.CatalogPlayerPageTest@13b6aecc]" started-at="2020-04-16T14:25:45Z" name="teardown" finished-at="2020-04-16T14:25:45Z" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="initialization()[pri:0, instance:com.qa.sonyops.testcases.LoginPageCETest@2145433b]" started-at="2020-03-11T16:48:58Z" name="initialization" finished-at="2020-03-11T16:49:04Z" duration-ms="6259" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- initialization -->
-        <test-method signature="ValidateLoginPageTitle()[pri:0, instance:com.qa.sonyops.testcases.LoginPageCETest@2145433b]" started-at="2020-03-11T16:49:04Z" name="ValidateLoginPageTitle" finished-at="2020-03-11T16:49:04Z" duration-ms="9" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- ValidateLoginPageTitle -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.qa.sonyops.testcases.LoginPageCETest@2145433b]" started-at="2020-03-11T16:49:04Z" name="tearDown" finished-at="2020-03-11T16:49:05Z" duration-ms="1002" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="initialization()[pri:0, instance:com.qa.sonyops.testcases.LoginPageCETest@2145433b]" started-at="2020-03-11T16:49:05Z" name="initialization" finished-at="2020-03-11T16:49:15Z" duration-ms="10283" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- initialization -->
-        <test-method signature="ValidateLoginToCEportal()[pri:0, instance:com.qa.sonyops.testcases.LoginPageCETest@2145433b]" started-at="2020-03-11T16:49:15Z" name="ValidateLoginToCEportal" finished-at="2020-03-11T16:49:19Z" duration-ms="3471" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- ValidateLoginToCEportal -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.qa.sonyops.testcases.LoginPageCETest@2145433b]" started-at="2020-03-11T16:49:19Z" name="tearDown" finished-at="2020-03-11T16:49:20Z" duration-ms="1002" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-      </class> <!-- com.qa.sonyops.testcases.LoginPageCETest -->
+        </test-method> <!-- teardown -->
+      </class> <!-- com.qa.sonyops.testcases.CatalogPlayerPageTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
