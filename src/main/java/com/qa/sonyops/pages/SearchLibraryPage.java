@@ -1,5 +1,6 @@
 package com.qa.sonyops.pages;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.openqa.selenium.By;
@@ -9,6 +10,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Listeners;
 
@@ -120,7 +122,22 @@ public class SearchLibraryPage extends BaseClass {
 	
 	@FindBy(css = "div#spanSearchHeader")
 	WebElement Filter_result;
-
+	
+	@FindBy(xpath = "//div[@id='Search.Sort']")
+	WebElement Sort_option;
+    
+	@FindBy(css = ".searchSortPanel")
+	WebElement SortPanel;
+	
+	@FindBy(css = ".lsView")
+	WebElement ListView;
+	
+	@FindBy(id = "gridView")
+	WebElement GridView_icon;
+	
+	@FindBy(css = ".gridView")
+	WebElement GridView;
+	
 	public SearchLibraryPage() {
 		PageFactory.initElements(driver, this);
 	}
@@ -303,6 +320,7 @@ public class SearchLibraryPage extends BaseClass {
 		return TotalAssetsinLibrary.getText();
 }
 
+	
 //Method to Verify 'i' icon is displaying , if displaying click on that	
 	public boolean ClickInformationModeIcon() {
 		int Total_rec_count = 0;
@@ -465,10 +483,44 @@ public class SearchLibraryPage extends BaseClass {
 		return Filter_result.getText();
 	}
 	
+//method to get sort options in the library
+	public boolean CheckSortOptionInLibrary()
+	{
+		return Sort_option.isDisplayed();
+	}
 	
+	//method to get sort options
+	public String getSortOptions()
+	{
+		String Sort_options = "null";
+		testutil=new TestUtil();
+		testutil.MouseHover(Sort_option);
+		List<WebElement> sortOptions = driver.findElements(By.cssSelector(".searchSortPanel"));
+		for(int i=0 ; i<sortOptions.size() ; i++)
+		{
+			Sort_options = sortOptions.get(i).getText();
+			System.out.println(sortOptions.get(i).getText());
+		}
+	    return Sort_options;
+	}
 	
+	//public void Check if assets are displaying in ListView
+	public boolean CheckListView()
+	{
+		return ListView.isDisplayed();
+	}
 	
-	
+	//public void Check if assets are displaying in GridView
+	public boolean gridViewIsDisplaying()
+	{
+		boolean AssetsInGridView=false;
+        TestUtil.Click(driver, 20, GridView_icon);
+        if(GridView.isDisplayed())
+        {
+        	AssetsInGridView=true;
+        }
+        return AssetsInGridView;
+	}
 	
 	
 	

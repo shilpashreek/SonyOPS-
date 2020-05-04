@@ -19,6 +19,7 @@ import com.qa.sonyops.util.TestUtil;
 public class HomePage extends BaseClass 
 {
 	SearchLibraryPage searchlibrary;
+	HomePage homepage;
 	
 	@FindBy(css = "div#paginationControl")
 	WebElement Pagination;
@@ -71,15 +72,24 @@ public class HomePage extends BaseClass
 		}
 	}
 	
-	public CatalogPage SelectCatalogUserRole() throws InterruptedException
+	public void SelectUserRole(String role) throws InterruptedException
 	{
 		WebElement User_role = driver.findElement(By.xpath(prop.getProperty("UserRole_xpath")));
 		Actions act = new Actions(driver);
 		act.moveToElement(User_role).click().build().perform();
 		Thread.sleep(2000);
-		driver.findElement(By.xpath(prop.getProperty("SonyCatalog_xpath"))).click();
+		driver.findElement(By.xpath(prop.getProperty(role))).click();
+		
+	}
+	
+	public CatalogPage SelectCatalogUserRole() throws Exception
+	{
+		homepage=new HomePage();
+		homepage.SelectUserRole("SonyCatalog_xpath");
 		return new CatalogPage();
 	}
+	
+	
 	
 	public SearchLibraryPage SearchTestAsset()
 	{
@@ -95,5 +105,30 @@ public class HomePage extends BaseClass
 		return driver.getCurrentUrl();
 		
 	}
+	
+	
+	public OpsPage SelectPFTopsUserRole() throws Exception
+	{
+		homepage =new HomePage();
+		homepage.SelectUserRole("Pft_ops_user");
+		return new OpsPage();
+	}
+	
+	public CatalogManagerPage SelectCatalogManagerRole() throws Exception
+	{
+		homepage=new HomePage();
+		homepage.SelectUserRole("Sony_catalog_manager");
+		return new CatalogManagerPage();
+	}
+	
+	public SubtitlePage SelectSubtitleUserRole() throws Exception
+	{
+		homepage=new HomePage();
+		homepage.SelectUserRole("Sony_subtitle_user");
+		return new SubtitlePage();
+	}
+	
+	
+	
 	
 }

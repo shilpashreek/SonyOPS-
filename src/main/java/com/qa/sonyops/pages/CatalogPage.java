@@ -11,7 +11,6 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.Assert;
 import org.testng.annotations.Listeners;
 
 import com.qa.sonyops.base.BaseClass;
@@ -24,10 +23,13 @@ public class CatalogPage extends BaseClass
 	static TestUtil testutil;
 	public static String AssetName;
 	WebDriverWait wait;
-	public static String AssetTitle;
+	public static String AssetTitle = "null";
 	static int AutoSuggestions_count;
 	public static String Selected_Asset;
 	public static String Error_msg;
+	public static String UploadedOn = "null";
+	static String Asset_Title;
+	boolean CatalogStatus=false;
 	
 @FindBy(id = "ddSelectedRole")
 WebElement Current_role;
@@ -60,7 +62,7 @@ WebElement cat_filter_field;
 WebElement Page_Search_btn;
 
 @FindBy(css = "span#displayTotal")
-WebElement No_Of_Total_Pages;
+WebElement No_Of_Total_Pages;           
 
 @FindBy(css = ".headerSearchBtnV2")
 WebElement Library_Search;
@@ -90,9 +92,16 @@ public String GetDashboardLabel()
 
 public boolean ClickApplyFilters() throws InterruptedException
 {   
-	//Filter.click();
-	TestUtil.Click(driver, 20, Filter);
-	boolean b=Filter_Search.isDisplayed();
+	boolean b= false;
+	try {
+	TestUtil.Click(driver, 30, Filter);
+	b=Filter_Search.isDisplayed();
+	}
+	catch(Exception e)
+	{
+		e.printStackTrace();
+		System.out.println(e.getMessage());
+	}
 	return b;
 }
 
@@ -120,6 +129,8 @@ public boolean ApplyCatalogStatus(String status) throws InterruptedException
 
 public void SearchForTestAsset(String AssetName ) throws InterruptedException
 {
+	new WebDriverWait(driver,30).
+	until(ExpectedConditions.visibilityOf(Page_Search_btn));
 	for(int i=1;i<3;i++)
 	{	
 	Page_Search_btn.clear();
@@ -127,6 +138,7 @@ public void SearchForTestAsset(String AssetName ) throws InterruptedException
 	}
 	Page_Search_btn.sendKeys(AssetName);
 	Page_Search_btn.sendKeys(Keys.ENTER);
+	
 }
 
 public int FilterResults() throws InterruptedException
@@ -159,24 +171,31 @@ public String GetNumberOfPages()
 	String CountWhenPageLoads=No_Of_Total_Pages.getText();
 	return CountWhenPageLoads;
 }
-public String ClickOnFirstTestAsset()
+public String ClickOnFirstTestAsset(String filter)
 {
-	String AssetTitle= null;
 	String Title_xpath_b = prop.getProperty("Title_xpath_before"); 
 	String Title_xpath_A = prop.getProperty("Title_xpath_After"); 
 	
 	String Status_xpath_b = prop.getProperty("Status_xpath_before");
 	String Status_xpath_A = prop.getProperty("Status_xpath_After");
+	
+	String Uploadedtime_xapth_b= "//*[starts-with(@id,'dataContainer_')]/tr[";
+	String Uploadedtime_xpath_a= "]/td[4]/div";
+	
 	List<WebElement> Allrows = driver.findElements(By.xpath("//*[starts-with(@id,'dataContainer_')]/tr"));
 	System.out.println("Records loaded in catalogPage is " +Allrows.size());
 	for(int i =1; i<=Allrows.size() ; i++)
 	{
 		WebElement Status_Column = driver.findElement(By.xpath(Status_xpath_b + i + Status_xpath_A));
-		if(Status_Column.getText().equals(prop.getProperty("FilterToBeApplied")))
+		if(Status_Column.getText().equals(filter))
 		{
 			WebElement Title_column= driver.findElement(By.xpath(Title_xpath_b + i + Title_xpath_A ));
 			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 			AssetTitle = Title_column.getText();
+			//adding to store time //UploadedOn
+			WebElement TestAsset_uploadedTime=driver.findElement(By.xpath(Uploadedtime_xapth_b + i + Uploadedtime_xpath_a));
+			UploadedOn = TestAsset_uploadedTime.getText();
+			System.out.println("Test file ingested date and time" + " " +UploadedOn);
 			System.out.println(AssetTitle);
 			Title_column.click();
 			break;
@@ -193,7 +212,6 @@ public void ClickOnLibrarySearch(String SearchText)
 	TestUtil.Sendkeys(driver, 5, SearchTextArea, SearchText);
 	
 }
-
 
 
 public int CaptureAutoSuggesstions()
@@ -238,10 +256,7 @@ public String CheckIfSuggestionListIsdisplaying()
 				break;
 			}
 		}
-		
-	}
-	 
-	else 
+	}else 
 	 { 
 		System.out.println("Autosuggestions are not displaying");
 		driver.findElement(By.xpath("//div[@class='searchBtn']")).click();
@@ -262,6 +277,5 @@ public String GetAssetTitleFromAssetLibrary()
 	
 }
 
-
-
 }
+

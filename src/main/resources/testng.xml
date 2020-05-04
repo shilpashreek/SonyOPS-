@@ -15,7 +15,10 @@
          <class name= "com.qa.sonyops.testcases.HomePageTest">  </class>
          <class name= "com.qa.sonyops.testcases.CatalogPageTest">  </class>
          <class name= "com.qa.sonyops.testcases.CatalogPlayerPageTest">  </class>
+         <class name= "com.qa.sonyops.testcases.CatalogManagerPageTest">  </class>
          <class name= "com.qa.sonyops.testcases.SearchLibraryPageTest">  </class>
+         <class name= "com.qa.sonyops.testcases.OpsPageTest">  </class>
+         <class name= "com.qa.sonyops.testcases.SmarttaskerPageTest">  </class>
     </classes>
   </test> 
 </suite>

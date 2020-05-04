@@ -31,23 +31,53 @@ div.shootout {padding:2em;border:3px #4854A8 solid}
 <body>
 <table cellspacing="0" cellpadding="0" class="result">
 <tr><th>Test</th><th class="numi">Methods<br/>Passed</th><th class="numi">Scenarios<br/>Passed</th><th class="numi"># skipped</th><th class="numi"># failed</th><th class="numi">Total<br/>Time</th><th class="numi">Included<br/>Groups</th><th class="numi">Excluded<br/>Groups</th></tr>
-<tr><td style="text-align:left;padding-right:2em">Default test</td><td class="numi">1</td><td class="numi">1</td><td class="numi">0</td><td class="numi">0</td><td class="numi">40.6 seconds</td><td class="numi"></td><td class="numi"></td></tr>
+<tr><td style="text-align:left;padding-right:2em">Default test</td><td class="numi">1</td><td class="numi">1</td><td class="numi">0</td><td class="numi">0</td><td class="numi">90.0 seconds</td><td class="numi"></td><td class="numi"></td></tr>
 </table>
 <table cellspacing="0" cellpadding="0" class="passed" id="summary">
 <tr><th>Class</th><th>Method</th><th># of<br/>Scenarios</th><th>Start</th><th>Time<br/>(ms)</th></tr>
+<tr><th colspan="4">Default test &#8212; failed (configuration methods)</th></tr>
+<tr class="failedodd"><td rowspan="1">com.qa.sonyops.testcases.SubtitlePageTest</td><td><a href="#m1"><b>DeleteTemporaryFolder</b>  </a></td><td class="numi">1</td><td>1588521374670</td><td class="numi">0</td></tr>
 <tr><th colspan="4">Default test &#8212; passed</th></tr>
-<tr class="passedodd"><td rowspan="1">com.qa.sonyops.testcases.CatalogPlayerPageTest</td><td><a href="#m1"><b>ValidateEnteringDataInEpisodeStrata</b>  </a></td><td class="numi">1</td><td>1587027337059</td><td class="numi">7671</td></tr>
+<tr class="passedodd"><td rowspan="1">com.qa.sonyops.testcases.SubtitlePageTest</td><td><a href="#m2"><b>ValiadteEssenceUpload</b>  </a></td><td class="numi">1</td><td>1588521323123</td><td class="numi">50785</td></tr>
 </table>
 <h1>Default test</h1>
-<h2 id="m1">com.qa.sonyops.testcases.CatalogPlayerPageTest:ValidateEnteringDataInEpisodeStrata</h2>
-<table cellspacing="0" cellpadding="0" class="result">
-<tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th><th>Parameter #4</th><th>Parameter #5</th></tr>
-<tr class="param stripe"><td>PFT-Test</td>
-<td>  &apos;5</td>
-<td>Pft test ingest</td>
-<td>Test</td>
-<td>PFT test asset, please ignore</td>
-</tr>
-</table>
+<h2 id="m1">com.qa.sonyops.testcases.SubtitlePageTest:DeleteTemporaryFolder</h2>
+<div style="padding-left:3em">
+<p>Unable to delete file: C:\Users\Manjushree\Documents\SonyOPS-\temp\User Data\ShaderCache\GPUCache\index</p>
+org.apache.commons.io.FileUtils.forceDelete(FileUtils.java:2400)
+<br/>at org.apache.commons.io.FileUtils.cleanDirectory(FileUtils.java:1721)
+<br/>at org.apache.commons.io.FileUtils.deleteDirectory(FileUtils.java:1617)
+<br/>at org.apache.commons.io.FileUtils.forceDelete(FileUtils.java:2391)
+<br/>at org.apache.commons.io.FileUtils.cleanDirectory(FileUtils.java:1721)
+<br/>at org.apache.commons.io.FileUtils.deleteDirectory(FileUtils.java:1617)
+<br/>at org.apache.commons.io.FileUtils.forceDelete(FileUtils.java:2391)
+<br/>at org.apache.commons.io.FileUtils.cleanDirectory(FileUtils.java:1721)
+<br/>at org.apache.commons.io.FileUtils.deleteDirectory(FileUtils.java:1617)
+<br/>at org.apache.commons.io.FileUtils.forceDelete(FileUtils.java:2391)
+<br/>at org.apache.commons.io.FileUtils.cleanDirectory(FileUtils.java:1721)
+<br/>at org.apache.commons.io.FileUtils.deleteDirectory(FileUtils.java:1617)
+<br/>at com.qa.sonyops.base.BaseClass.DeleteTemporaryFolder(BaseClass.java:137)
+<br/>at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+<br/>at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+<br/>at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+<br/>at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+<br/>at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)
+<br/>at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:564)
+<br/>at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:213)
+<br/>at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:138)
+<br/>at org.testng.SuiteRunner.privateRun(SuiteRunner.java:308)
+<br/>at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+<br/>at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+<br/>at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+<br/>at org.testng.TestNG.runSuitesSequentially(TestNG.java:1198)
+<br/>at org.testng.TestNG.runSuitesLocally(TestNG.java:1123)
+<br/>at org.testng.TestNG.run(TestNG.java:1031)
+<br/>at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+<br/>at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+<br/>at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+<br/>1 lines not shown
+</div>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m2">com.qa.sonyops.testcases.SubtitlePageTest:ValiadteEssenceUpload</h2>
 <p class="totop"><a href="#summary">back to summary</a></p>
 </body></html>

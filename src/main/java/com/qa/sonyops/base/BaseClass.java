@@ -1,15 +1,22 @@
 package com.qa.sonyops.base;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeDriverService;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
+import org.testng.annotations.AfterSuite;
+import org.testng.annotations.BeforeSuite;
 import org.testng.log4testng.Logger;
 
 import com.qa.sonyops.util.TestUtil;
@@ -44,6 +51,22 @@ static EventFiringWebDriver e_driver;
 	  
   }
 
+     @BeforeSuite
+     public void LoadChromeDataToTempFolder() throws Exception
+     {
+    	 File DestFolder = new File("C:\\Users\\Manjushree\\Documents\\SonyOPS-\\temp");
+    	 File SrcFolder=new File("C:\\Users\\Manjushree\\Documents\\SonyOPS-\\chromedata");
+    	 
+    	 if(DestFolder.exists())
+    	 {
+    		 FileUtils.copyDirectory(SrcFolder, DestFolder);
+    	 }else {
+    		 DestFolder.mkdir();
+    		 FileUtils.copyDirectory(SrcFolder, DestFolder);
+    	 }
+    
+     }
+     
      //Initialization method-To get the details of my browser
      public static void initialisation(String url)
      {
@@ -51,8 +74,33 @@ static EventFiringWebDriver e_driver;
     	System.out.println("Selected browser is" + " " + browserName);
     	if(browserName.equals("chrome"))
     	{
+			/*
+			 * HashMap<String, Object> prefs = new HashMap<String, Object>();
+			 * //prefs.put("profile.default_content_settings.popups", 1);
+			 * //options.addArguments("--no-sandbox"); //
+			 * options.addArguments("--disable-dev-shm-usage");
+			 * prefs.put("credentials_enable_service", false);
+			 * prefs.put("profile.password_manager_enabled", false);
+			 * prefs.put("profile.default_content_setting_values.plugins", 1);
+			 * prefs.put("profile.content_settings.plugin_whitelist.adobe-flash-player", 1);
+			 * prefs.put(
+			 * "profile.content_settings.exceptions.plugins.*,*.per_resource.adobe-flash-player",
+			 * 1); prefs.put("profile.default_content_settings.popups", 1);
+			 * prefs.put("PluginsAllowedForUrls",
+			 * "http://192.168.150.205:1000/BC/Product/Modules/Dashboard/Dashboard.aspx");
+			 * //options.setExperimentalOption("prefs", prefs);
+			 */    		
+    		
+    		
+    		ChromeOptions options = new ChromeOptions();
+    		options.addArguments("user-data-dir=C:\\Users\\Manjushree\\Documents\\SonyOPS-\\temp\\User Data");
+    		
+    		
+    		//to suppress error logs in console
+    		System.setProperty(ChromeDriverService.CHROME_DRIVER_SILENT_OUTPUT_PROPERTY, "true");
+    		
     		System.setProperty("webdriver.chrome.driver", prop.getProperty("chromedriver_path"));
-    		driver=new ChromeDriver();
+    		driver=new ChromeDriver(options);
     	}
     	else if(browserName.equals("FireFox"))
     	{
@@ -79,6 +127,18 @@ static EventFiringWebDriver e_driver;
         
      }
      
+	
+	
+	  @AfterSuite 
+	  public void DeleteTemporaryFolder() throws Exception 
+	  { 
+		  File temp=new File("C:\\Users\\Manjushree\\Documents\\SonyOPS-\\temp");
+	  if(temp.exists()) 
+	  { FileUtils.deleteDirectory(temp); 
+	  } 
+	  }
+	 
+	 
    
      
      

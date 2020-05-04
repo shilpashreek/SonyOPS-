@@ -47,7 +47,7 @@ public class HomePageTest extends BaseClass
     }
     
     @Test(enabled=false)
-    public void ValidateUserRoleResult() throws InterruptedException
+    public void ValidateUserRoleResult() throws Exception
     {
     	catalogpage=homepage.SelectCatalogUserRole();
     }

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite parallel="none" name="Failed suite [SonyOps tenant Automated Test Cases]">
+  <listeners>
+    <listener class-name="com.qa.sonyops.ExtentReportListener.ExtentReporterNG"/>
+  </listeners>
+  <test parallel="none" name="CatalogStatus validation(failed)">
+    <classes>
+      <class name="com.qa.sonyops.testcases.CatalogManagerPageTest">
+        <methods>
+          <include name="setup"/>
+          <include name="tearDown"/>
+          <include name="ValidateCatalogStatus_AfterCatalogIsDone"/>
+        </methods>
+      </class> <!-- com.qa.sonyops.testcases.CatalogManagerPageTest -->
+      <class name="com.qa.sonyops.testcases.CatalogPlayerPageTest">
+        <methods>
+          <include name="teardown"/>
+          <include name="SetUp"/>
+        </methods>
+      </class> <!-- com.qa.sonyops.testcases.CatalogPlayerPageTest -->
+    </classes>
+  </test> <!-- CatalogStatus validation(failed) -->
+</suite> <!-- Failed suite [SonyOps tenant Automated Test Cases] -->

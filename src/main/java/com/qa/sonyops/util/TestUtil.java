@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.List;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.log4j.Logger;
@@ -237,13 +238,26 @@ public boolean TimecodeComparison(String TC_IN_value, String TC_OUT_value)
 
 }
 
-//Select class util to handle dropdown
+//Select class util to select value from dropdown
 public void HandlingDropDown(WebElement element,String value)
 {
 	Select s = new Select(element);
 	s.selectByVisibleText(value);
 }
 
+//select class util to get all the dropdown values
+public int getDropDownValues(WebElement element)
+{
+	Select s = new Select(element);
+	List<WebElement> DropDown_List = s.getOptions();
+	int dropDown_size=DropDown_List.size();
+	System.out.println("values in dropdown are" + " " +dropDown_size);
+	for( WebElement DropDown_values : DropDown_List)
+	{
+		System.out.println(DropDown_values.getText());
+	}
+	return dropDown_size;
+}
 //Method to perform mouse hover action
 public void MouseHover(WebElement ele)
 {

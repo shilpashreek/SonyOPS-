@@ -123,7 +123,7 @@ public class StreamUtil extends BaseClass
 				String TC_out = stream.GetTotalDurationOfVideo(TC_OUT);
 				Thread.sleep(3000);
 				stream.ClickPlay_pausekey(Play);
-				Thread.sleep(30000);
+				Thread.sleep(20000);
 				stream.ClickPlay_pausekey(Play);
 				String TC_after = stream.GetTimeCode_in(TC_IN);
 				System.out.println("Total duration of the video" + TC_out);

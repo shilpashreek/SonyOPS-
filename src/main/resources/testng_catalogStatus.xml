@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="SonyOps tenant Automated Test Cases">
+
+<listeners>
+<listener  class-name= "com.qa.sonyops.ExtentReportListener.ExtentReporterNG"  />
+</listeners>
+
+ <test name="CatalogStatus validation" parallel="none" preserve-order="true" group-by-instances="true">
+    <classes>
+    
+        <class name="com.qa.sonyops.testcases.CatalogPlayerPageTest" > 
+           <methods>
+             <include name= "ValidateAssetTitleInCatalogPopUp" />
+             <include name= "Validate_SeriesStrataSave_CaptureAlertMessage" />
+             <include name= "EnteringDataInEpisodeStrata_Save_CaptureSuccessMsg" />
+          </methods>
+        </class>
+        
+        <class name = "com.qa.sonyops.testcases.CatalogManagerPageTest" > 
+        <methods>
+        <include name = "ValidateCatalogStatus_AfterCatalogIsDone" />
+        </methods>
+        </class>
+        
+    </classes>
+ </test>
+</suite>

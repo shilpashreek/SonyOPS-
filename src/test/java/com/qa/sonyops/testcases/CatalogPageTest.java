@@ -40,7 +40,7 @@ public class CatalogPageTest extends BaseClass
   }
   
 @BeforeMethod
-public void SetUp() throws InterruptedException
+public void SetUp() throws Exception
 {
 	initialisation("bc_url");
 	loginpage=new LoginPage();
@@ -94,6 +94,7 @@ public void ValidateResultsAreDisplayedAccToAppliedFilters() throws InterruptedE
 	System.out.println("Page Count initially" + " " +PageCountInitially + " " +"page count after performing search"  
 	 +" " + " " +PageCountAfterSearch +" " +"Pagecount after applying filter" + " " +PageCountAfterCatalogStatus);
 	Assert.assertTrue(PageCountAfterSearch_int < PageCountInitially_int && PageCountAfterCatalogStatus_int < PageCountAfterSearch_int , "Filters are not applied");
+	
 }
 
 	
@@ -107,11 +108,11 @@ public void ValidateResultsAreDisplayedAccToAppliedFilters() throws InterruptedE
 	 boolean b =catalogpage.ApplyCatalogStatus(prop.getProperty("FilterToBeApplied"));
 	 Assert.assertTrue(b , "Filter is applied successfully"); 
 	 TestUtil.Buffering(driver, 40);
-	 AssetTitle=catalogpage.ClickOnFirstTestAsset();
+	 AssetTitle=catalogpage.ClickOnFirstTestAsset("Not Started");
 	 Assert.assertTrue(AssetTitle.contains("Test"),"Selected Asset doesnot contain test in the title");
 }
 
-@Test
+@Test(enabled=false)
 public void ValidateAutoSuggestionsIsDisplaying()
 {
 	catalogpage.ClickOnLibrarySearch("tes");
@@ -129,15 +130,15 @@ public void ValidateSearchforValidData()
 	
 }
 
-
-
-@Test(enabled=false)
+@Test(enabled=true)
 public void ValidateSearchForInvalidData()
 {
 	catalogpage.ClickOnLibrarySearch("abc");
 	String ActualErrorMsg=catalogpage.CheckIfSuggestionListIsdisplaying();
 	Assert.assertTrue(ActualErrorMsg.startsWith("Your search"));
 }
+
+
 
 @AfterMethod
 public void tearDown()

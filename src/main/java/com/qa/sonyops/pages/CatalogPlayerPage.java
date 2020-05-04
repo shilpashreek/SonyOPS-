@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Set;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -17,12 +18,13 @@ import com.qa.sonyops.util.JavascriptUtils;
 import com.qa.sonyops.util.StreamUtil;
 import com.qa.sonyops.util.TestNGListeners;
 import com.qa.sonyops.util.TestUtil;
+import com.qa.sonyops.pages.CatalogPage;
 
 @Listeners(TestNGListeners.class)
 public class CatalogPlayerPage extends BaseClass
 {
 	static WebDriverWait wait;
-	public static String A_title;
+	public static String A_title = "null";
 	static TestUtil testutil;
 	StreamUtil stream;
 	static String Mark_in_time="null";
@@ -30,9 +32,12 @@ public class CatalogPlayerPage extends BaseClass
 	CatalogPlayerPage C_playerpage;
 	static int checkboxes=0;
 	static int CheckBox_count=0;
+	String IngestedDate=CatalogPage.UploadedOn;
+	CatalogPage catalogpage;
 	
 	
-@FindBy(css = ".popupHeader")
+	
+@FindBy(id = "Catalog_title_holder")
 WebElement SelectedAssetTitle;
 
 @FindBy(css = "div#CMP_CatalogPlayerV2Container_dvFrameTime")
@@ -135,18 +140,21 @@ WebElement Synopsis;
 @FindBy(css = "textarea#txtKeyWords")
 WebElement Keywords;
 
+@FindBy(id = "InboxSearch") 
+WebElement Search;
+
 //Initializing Object Repository
 public CatalogPlayerPage()
 {
 	PageFactory.initElements(driver, this);
 }
 
-//Method to get asset tile in catalog popup
+//Method to get asset tile in catalog popup  -Test for Linux Sonyops-Ep 1
 public String GetAssetTitle()
 {
 	A_title = SelectedAssetTitle.getText();
 	System.out.println("Title of the asset in catalog popup is" + " " +A_title);
-	return A_title; 
+	return A_title;             
 }
 
 //alertMessageUCWrapper
@@ -338,14 +346,14 @@ public String SaveSeriesStrata() throws InterruptedException
 	
 	if(Asset_Title.contains("Test")){
 		Thread.sleep(3000);
-		WebElement Save_btn=driver.findElement(By.cssSelector(".saveBtn.marR15.FR"));
+		WebElement Save_btn=driver.findElement(By.id("btnSaveCatalogV2Attrib"));
 		TestUtil.Click(driver, 30, Save_btn);
 		Success_alert=Alert.getText();
 		System.out.println("Alert message on saving series strata" +Success_alert);
 		return Success_alert;
 	}else
 	{
-		System.out.println("Displayed asset is not test asset");
+		System.out.println("Test asset is not selected");
 	}
 	return Success_alert;
 }
@@ -360,6 +368,11 @@ public boolean ClickOnEpisodeStrata()
 //Method to enter values to Episode strata
 public void ProvideMandatoryData(String title ,String Seg ,String summary , String synop,String word)
 {
+	C_playerpage=new CatalogPlayerPage();
+	String Asset_Title=C_playerpage.GetAssetTitle();
+	
+	if(Asset_Title.contains("Test"))
+	{
 	TestUtil.Clear(driver, 10, Episode_title);
 	TestUtil.Sendkeys(driver, 5, Episode_title, title);
 	TestUtil.Clear(driver, 5, No_of_segments);
@@ -371,23 +384,116 @@ public void ProvideMandatoryData(String title ,String Seg ,String summary , Stri
 	JavascriptUtils.scrollIntoView(Keywords, driver);
 	TestUtil.Clear(driver, 5, Keywords);
 	TestUtil.Sendkeys(driver, 5, Keywords, word);
+	}
 }
 
-
-
-
-
+//method to save episode StratA 
+public String SaveEpisodeStrataDataAndCaptureAlertMessage()
+{
+	String SuccessAlert="null";
+	C_playerpage=new CatalogPlayerPage();
+	String TestAssetTitle = C_playerpage.GetAssetTitle();
+	if(TestAssetTitle.contains("Test"))
+	{	
+	WebElement save=driver.findElement(By.xpath("//div[@id='btnSaveCatalogV2Attrib']"));
+	TestUtil.Click(driver, 20, save);
+	SuccessAlert=Alert.getText();
+	System.out.println("Success alert message on saving episode strata" +Alert.getText());
+	}
+	else
+	{
+		System.out.println("Test asset is not selected");
+	}
+	return SuccessAlert;
+	
+}
 
 //Method to close catalog pop-up
 public boolean CloseCatalogPlayerPop_up()
 {
 	
 	TestUtil.Click(driver, 20, Close_Catalog_popUp);
-	TestUtil.Pageloading(driver, 10);
+	try {
+	new WebDriverWait(driver,30)
+	.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath("//div[@class='waitingLoader']")));
+	}catch(Exception e)
+	{
+		System.out.println(e.getMessage());
+		e.printStackTrace();
+	}
 	return Filter.isDisplayed();
 }
 
+//method to select catalogManagerRole
+public void navigateToManagerRole() throws Exception
+{   
+	C_playerpage=new CatalogPlayerPage();
+	C_playerpage.CloseCatalogPlayerPop_up();
+	HomePage homepage=new HomePage();
+	homepage.SelectUserRole("Sony Catalog Manager");
+}
 
+//method get test asset title after performing cataloging
+public void SearchforAssetOnWhichCatalogIsPerformed()
+{
+	TestUtil.Clear(driver, 30, Search);
+	TestUtil.Sendkeys(driver, 20, Search, A_title);
+	Search.sendKeys(Keys.ENTER);
+}
 
+//method to change filter status from not started to all
+public void ChangeCatalogStatusToAllStatusType() throws Exception
+{
+	catalogpage=new CatalogPage();
+	catalogpage.ClickApplyFilters();
+	catalogpage.ApplyCatalogStatus("All");
+}
+//get catalog status of the TestAsset 
+public boolean getCatalogingStatusOfTestAsset()
+{
+	boolean CatalogStatus = false;
+	String Title_xpath_b = prop.getProperty("Title_xpath_before"); 
+	String Title_xpath_A = prop.getProperty("Title_xpath_After"); 
+	
+	String Status_xpath_b = prop.getProperty("Status_xpath_before");
+	String Status_xpath_A = prop.getProperty("Status_xpath_After");
+	
+	String Uploadedtime_xapth_b= "//*[starts-with(@id,'dataContainer_')]/tr[";
+	String Uploadedtime_xpath_a= "]/td[4]/div";
+	
+	List<WebElement> Allrows = driver.findElements(By.xpath("//*[starts-with(@id,'dataContainer_')]/tr"));
+	System.out.println("Records loaded in catalogPage is " +Allrows.size());
+	if(Allrows.size()>0)
+	{	
+	for(int i=1; i<=Allrows.size() ; i++)
+	{
+		//checking if title matches
+		WebElement AssetTitle = driver.findElement(By.xpath(Title_xpath_b+i+Title_xpath_A));
+		WebElement TestAsset_uploadedTime=driver.findElement(By.xpath(Uploadedtime_xapth_b+ i+Uploadedtime_xpath_a));
+		String i_date=TestAsset_uploadedTime.getText();  //can be removed
+		System.out.println(i_date);                      //can be removed
+		if(AssetTitle.getText().equals(A_title) && TestAsset_uploadedTime.getText().equals(IngestedDate) )
+		{
+			//check if uploadedOn time matches
+			//WebElement TestAsset_uploadedTime=driver.findElement(By.xpath(Uploadedtime_xapth_b+ i+Uploadedtime_xpath_a));
+			//if(TestAsset_uploadedTime.getText().equals(CatalogPage.UploadedOn))
+			//{
+				//get the corresponding status
+			WebElement Status = driver.findElement(By.xpath(Status_xpath_b+i+Status_xpath_A));
+			if(Status.getText().equals("In Progress"))
+			{
+				CatalogStatus=true;
+				return CatalogStatus;
+			}
+		// }
+	  }
+   }
+	return CatalogStatus;
+   }else{
+		String No_records_found = driver.findElement(By.cssSelector(".CatalogingDetailsDB")).getText();
+		System.out.println("No records displaying in the dashboard " + " " +No_records_found);
+	    }
+	return CatalogStatus;
+}
 
 }
