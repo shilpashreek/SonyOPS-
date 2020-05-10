@@ -21,6 +21,7 @@ import jdk.internal.jline.internal.Log;
 @Listeners(TestNGListeners.class)
 public class SearchLibraryPageTest extends BaseClass
 {
+	BaseClass baseclass;
 	LoginPage loginpage;
 	SearchLibraryPage searchpage;
 	static HomePage homepage;
@@ -39,7 +40,9 @@ public void SetUp()
 {
 	Logger log = Logger.getLogger(SearchLibraryPageTest.class.getName());
 	log.info("*****************Starting testcase execution*****************");
-	initialisation("url");
+	baseclass=new BaseClass();
+	baseclass.initialisation("url");
+	//initialisation("url");
 	C_playerpage=new CatalogPlayerPage();
 	C_playerpage.HandlingMultipleWindows();
 	driver.get(prop.getProperty("bc_url"));

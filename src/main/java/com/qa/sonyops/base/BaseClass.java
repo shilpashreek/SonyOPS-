@@ -39,61 +39,54 @@ static EventFiringWebDriver e_driver;
 	      FileInputStream fis;
 		  fis = new FileInputStream("C:\\Users\\Manjushree\\Documents\\SonyOPS-\\src\\main\\java\\com\\qa\\sonyops\\configuration\\config.properties");
 		  prop.load(fis);
-	    } 
-	catch (FileNotFoundException e)  
-	{ 
+	    } catch (FileNotFoundException e)  { 
 		e.printStackTrace();
-	} 
-	catch (IOException e) 
-	{
+	}catch (IOException e) {
 		e.printStackTrace();
 	}
 	  
   }
-
-     @BeforeSuite
-     public void LoadChromeDataToTempFolder() throws Exception
-     {
-    	 File DestFolder = new File("C:\\Users\\Manjushree\\Documents\\SonyOPS-\\temp");
-    	 File SrcFolder=new File("C:\\Users\\Manjushree\\Documents\\SonyOPS-\\chromedata");
-    	 
-    	 if(DestFolder.exists())
-    	 {
-    		 FileUtils.copyDirectory(SrcFolder, DestFolder);
-    	 }else {
-    		 DestFolder.mkdir();
-    		 FileUtils.copyDirectory(SrcFolder, DestFolder);
-    	 }
-    
-     }
+	
+	  @BeforeSuite(enabled=true) 
+	  public void LoadChromeDataToTempFolder() throws Exception 
+	  { 
+		  File DestFolder = new File("C:\\Users\\Manjushree\\Documents\\SonyOPS-\\temp"); 
+		  File SrcFolder=new File("C:\\Users\\Manjushree\\Documents\\SonyOPS-\\chromedata");
+	  
+	  if(DestFolder.exists()) 
+	  { 
+		  FileUtils.copyDirectory(SrcFolder, DestFolder);
+	  }else 
+	  { 
+		  DestFolder.mkdir(); FileUtils.copyDirectory(SrcFolder, DestFolder); }
+	  }
+	 
      
      //Initialization method-To get the details of my browser
-     public static void initialisation(String url)
+     public void initialisation(String url)
      {
     	String browserName = prop.getProperty("browser");
     	System.out.println("Selected browser is" + " " + browserName);
     	if(browserName.equals("chrome"))
     	{
-			/*
-			 * HashMap<String, Object> prefs = new HashMap<String, Object>();
-			 * //prefs.put("profile.default_content_settings.popups", 1);
-			 * //options.addArguments("--no-sandbox"); //
-			 * options.addArguments("--disable-dev-shm-usage");
-			 * prefs.put("credentials_enable_service", false);
-			 * prefs.put("profile.password_manager_enabled", false);
-			 * prefs.put("profile.default_content_setting_values.plugins", 1);
-			 * prefs.put("profile.content_settings.plugin_whitelist.adobe-flash-player", 1);
-			 * prefs.put(
-			 * "profile.content_settings.exceptions.plugins.*,*.per_resource.adobe-flash-player",
-			 * 1); prefs.put("profile.default_content_settings.popups", 1);
-			 * prefs.put("PluginsAllowedForUrls",
-			 * "http://192.168.150.205:1000/BC/Product/Modules/Dashboard/Dashboard.aspx");
-			 * //options.setExperimentalOption("prefs", prefs);
-			 */    		
+			  ChromeOptions options = new ChromeOptions();
+			  HashMap<String, Object> prefs = new HashMap<String, Object>();
+			  prefs.put("profile.default_content_settings.popups", 1);
+			  //options.addArguments("--no-sandbox"); //
+			  options.addArguments("--disable-dev-shm-usage");
+			  prefs.put("credentials_enable_service", false);
+			  prefs.put("profile.password_manager_enabled", false);
+			  prefs.put("profile.default_content_setting_values.plugins", 1);
+			  prefs.put("profile.content_settings.plugin_whitelist.adobe-flash-player", 1);
+			  prefs.put("profile.content_settings.exceptions.plugins.*,*.per_resource.adobe-flash-player",1); 
+			  prefs.put("profile.default_content_settings.popups", 1);
+			  prefs.put("PluginsAllowedForUrls", "https://sonyops.clearhub.tv/BC/Product/Modules/SignIn.aspx");
+			  options.setExperimentalOption("prefs", prefs);
+			     		
     		
     		
-    		ChromeOptions options = new ChromeOptions();
-    		options.addArguments("user-data-dir=C:\\Users\\Manjushree\\Documents\\SonyOPS-\\temp\\User Data");
+    		
+    		//options.addArguments("user-data-dir=C:\\Users\\Manjushree\\Documents\\SonyOPS-\\temp\\User Data");
     		
     		
     		//to suppress error logs in console
@@ -129,7 +122,7 @@ static EventFiringWebDriver e_driver;
      
 	
 	
-	  @AfterSuite 
+	  @AfterSuite(enabled=true)
 	  public void DeleteTemporaryFolder() throws Exception 
 	  { 
 		  File temp=new File("C:\\Users\\Manjushree\\Documents\\SonyOPS-\\temp");

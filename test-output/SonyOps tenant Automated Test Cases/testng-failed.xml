@@ -4,21 +4,30 @@
   <listeners>
     <listener class-name="com.qa.sonyops.ExtentReportListener.ExtentReporterNG"/>
   </listeners>
-  <test parallel="none" name="CatalogStatus validation(failed)">
+  <test parallel="none" name="SonyOps Test cases(failed)">
     <classes>
-      <class name="com.qa.sonyops.testcases.CatalogManagerPageTest">
+      <class name="com.qa.sonyops.testcases.LoginPageTest">
+        <methods>
+          <include name="LoadChromeDataToTempFolder"/>
+          <include name="DeleteTemporaryFolder"/>
+          <include name="tearDown"/>
+          <include name="ValidateLoginForValidAndInvalidData" invocation-numbers="0"/>
+          <include name="setup"/>
+        </methods>
+      </class> <!-- com.qa.sonyops.testcases.LoginPageTest -->
+      <class name="com.qa.sonyops.testcases.LoginPageCETest">
+        <methods>
+          <include name="tearDown"/>
+          <include name="ValidateLoginToCEportal" invocation-numbers="0"/>
+          <include name="initialization"/>
+        </methods>
+      </class> <!-- com.qa.sonyops.testcases.LoginPageCETest -->
+      <class name="com.qa.sonyops.testcases.HomePageCETest">
         <methods>
           <include name="setup"/>
-          <include name="tearDown"/>
-          <include name="ValidateCatalogStatus_AfterCatalogIsDone"/>
-        </methods>
-      </class> <!-- com.qa.sonyops.testcases.CatalogManagerPageTest -->
-      <class name="com.qa.sonyops.testcases.CatalogPlayerPageTest">
-        <methods>
           <include name="teardown"/>
-          <include name="SetUp"/>
         </methods>
-      </class> <!-- com.qa.sonyops.testcases.CatalogPlayerPageTest -->
+      </class> <!-- com.qa.sonyops.testcases.HomePageCETest -->
     </classes>
-  </test> <!-- CatalogStatus validation(failed) -->
+  </test> <!-- SonyOps Test cases(failed) -->
 </suite> <!-- Failed suite [SonyOps tenant Automated Test Cases] -->

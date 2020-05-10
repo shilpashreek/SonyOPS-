@@ -13,6 +13,7 @@ import com.qa.sonyops.pages.SearchLibraryPage;
 
 public class HomePageTest extends BaseClass
 {
+	BaseClass baseclass;
 	static LoginPage loginpage;
 	static HomePage homepage;
 	static CatalogPage catalogpage;
@@ -26,13 +27,15 @@ public class HomePageTest extends BaseClass
     @BeforeMethod
     public void Setup()
     {
-    	initialisation("bc_url");
+    	baseclass=new BaseClass();
+    	baseclass.initialisation("bc_url");
+    	//initialisation("bc_url");
     	loginpage=new LoginPage();
     	homepage=loginpage.LogintoBC(prop.getProperty("username"), prop.getProperty("password"));
     	
     }
     
-    @Test(priority=1,enabled=false)
+    @Test(priority=1,enabled=true)
     public void ValidateHomePageTitle()
     {
     	String Title = homepage.GetHomePageTitle();
@@ -40,29 +43,29 @@ public class HomePageTest extends BaseClass
     	Assert.assertEquals(Title, "Sony OPS", "Actual title is not matching with the expected title");
     }
     
-    @Test(priority=2,enabled=false)
+    @Test(priority=2,enabled=true)
     public void ValidateLandingPageIsLoading()
     {
     	homepage.CheckColumnsInDashboard();
     }
     
-    @Test(enabled=false)
+    @Test(priority=3,enabled=true)
     public void ValidateUserRoleResult() throws Exception
     {
     	catalogpage=homepage.SelectCatalogUserRole();
     }
     
-    @Test
+    @Test(priority=4, enabled=true)
     public void ValidateAssetLibrarySearch()
     {
     	searchlibrary=homepage.SearchTestAsset();
     	String Current_url=homepage.GetPageUrl();
     	Assert.assertTrue(Current_url.contains("PFT.Clear.Search"),"SearchLibrary page is not displayed");
-    	
     }
+    
     @AfterMethod
     public void tearDown()
     {
-    	//driver.quit();
+    	driver.quit();
     }
 }

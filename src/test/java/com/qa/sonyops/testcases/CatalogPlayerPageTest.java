@@ -18,7 +18,7 @@ import com.qa.sonyops.util.TestUtil;
 @Listeners(TestNGListeners.class)
 public class CatalogPlayerPageTest extends BaseClass 
 {
-	static BaseClass baseclass;
+	BaseClass baseclass;
 	static LoginPage loginpage;
 	static HomePage homepage;
     static CatalogPage catalogpage;
@@ -38,7 +38,9 @@ public class CatalogPlayerPageTest extends BaseClass
   @BeforeMethod
   public void SetUp() throws Exception
   {
-	  initialisation("url");
+	  baseclass=new BaseClass();
+	  baseclass.initialisation("url");
+	  //initialisation("url");
 	  C_playerpage=new CatalogPlayerPage();
 	  C_playerpage.HandlingMultipleWindows();
 	  driver.get(prop.getProperty("bc_url"));
@@ -65,14 +67,14 @@ public class CatalogPlayerPageTest extends BaseClass
 	 Assert.assertTrue(AssetTitleHeader.equalsIgnoreCase(Asset_Title) , "Catalog popup is not displayed for the selected asset");
   }
   
-  @Test(priority=2 , enabled=false)
+  @Test(priority=2 , enabled=true)
   public void ValidateStreamingFromCatalogPopUp() throws InterruptedException
   {
 	 boolean b=C_playerpage.CheckStreaming_Catalogplayer();
 	 Assert.assertTrue(b);
   }
   
-  @Test(priority=3,enabled=false)
+  @Test(priority=3,enabled=true)
   public void ValidateSegmentCreationPopUpIsDisplayed() throws InterruptedException
   {
 	  boolean b=C_playerpage.CheckStreaming_Catalogplayer();
@@ -81,7 +83,7 @@ public class CatalogPlayerPageTest extends BaseClass
 	  Assert.assertEquals(Segment_popUp_title, "Add Segment");
   }
   
-  @Test(priority=4,enabled=false)
+  @Test(priority=4,enabled=true)
   public void validateMark_inAndMark_outTimeCodes() throws InterruptedException
   {
 	  C_playerpage.CheckStreaming_Catalogplayer();
@@ -90,7 +92,7 @@ public class CatalogPlayerPageTest extends BaseClass
 	  Assert.assertTrue(status);
   }
   
-  @Test(priority=5,enabled=false)
+  @Test(priority=5,enabled=true)
   public void ValidateAlertMessageOnCreatingSegment() throws InterruptedException
   {
 	  C_playerpage.CheckStreaming_Catalogplayer();
@@ -100,7 +102,7 @@ public class CatalogPlayerPageTest extends BaseClass
 	  
   }
   
-  @Test(priority=6, enabled=false)
+  @Test(priority=6, enabled=true)
   public void ValidateMusicStrataIsLoading()
   {
 	  boolean Music_strata=C_playerpage.NavigateToMusicStrata(); 
@@ -109,7 +111,7 @@ public class CatalogPlayerPageTest extends BaseClass
 	
   }
   
-  @Test(priority=7, enabled=false)
+  @Test(priority=7, enabled=true)
   public void ValidateEditSegmentPageIsDisplayed()
   {
 	  C_playerpage.NavigateToMusicStrata();
@@ -126,7 +128,7 @@ public class CatalogPlayerPageTest extends BaseClass
 		return test_data;
 	}
 	
-  @Test(priority =8 ,dataProvider = "getSegmentData" , enabled=false)
+  @Test(priority =8 ,dataProvider = "getSegmentData" , enabled=true)
   public void ValidateEditandSaveSegment(String title , String AlbumName , String Remark)
   {
 	  C_playerpage.NavigateToMusicStrata();
@@ -137,7 +139,7 @@ public class CatalogPlayerPageTest extends BaseClass
 	  Assert.assertTrue(Alert_msg.contains("Segment Edited Successfully"));
   }
   
-  @Test(priority=9 , enabled=false)
+  @Test(priority=9 , enabled=true)
   public void ValiadteErrorMessage_WhenNoSegSelected()
   {
 	  String Error_msg=C_playerpage.Error_Message_SegmentsNotSelected();
@@ -145,14 +147,14 @@ public class CatalogPlayerPageTest extends BaseClass
   }
   
   //cataloging test cases
-  @Test(priority=2 ,enabled=true)
+  @Test(priority=10 ,enabled=true)
   public void Validate_SeriesStrataSave_CaptureAlertMessage() throws InterruptedException
   {
 	  String AlertMessage=C_playerpage.SaveSeriesStrata();
 	  Assert.assertTrue(AlertMessage.contains("Data Saved Successfully"));
   }
  
-  @Test(priority=11  ,enabled=false)
+  @Test(priority=11  ,enabled=true)
   public void ValidateEpisodeStrataIsDisplaying()
   {
 	boolean Episode_tab_displayed= C_playerpage.ClickOnEpisodeStrata(); 
@@ -167,7 +169,7 @@ public class CatalogPlayerPageTest extends BaseClass
 	  return Episode_Data;
   }
   
-  @Test(priority=3 ,enabled= true , dataProvider="getEpisodeStrataData")
+  @Test(priority=12 ,enabled= true , dataProvider="getEpisodeStrataData")
   public void EnteringDataInEpisodeStrata_Save_CaptureSuccessMsg(String title , String Seg,String summary , String synop,String word)
   {
 	  C_playerpage.ClickOnEpisodeStrata();
@@ -176,7 +178,7 @@ public class CatalogPlayerPageTest extends BaseClass
 	  Assert.assertTrue(alert_msg.contains("Data Saved Successfully"));
   }
   
-  @Test(priority=13 ,enabled=false)
+  @Test(priority=13 ,enabled=true)
   public void ValidateClosePopUpFunctionality()
   {
  	boolean Pop_up_closed=C_playerpage.CloseCatalogPlayerPop_up();

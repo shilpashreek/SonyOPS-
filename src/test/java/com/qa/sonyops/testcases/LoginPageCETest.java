@@ -28,7 +28,8 @@ public class LoginPageCETest extends BaseClass
 public void initialization()
 {
 	baseclass=new BaseClass();
-	initialisation("ce_url");
+	baseclass.initialisation("ce_url");
+	//initialisation("ce_url");
 	logince=new LoginPageCE();
 	
 }

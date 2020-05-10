@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="SonyOps tenant Automated Test Cases">
+
+<listeners>
+<listener  class-name= "com.qa.sonyops.ExtentReportListener.ExtentReporterNG"  />
+</listeners>
+
+
+<test name="SonyOps Test cases" parallel="none" preserve-order="true" group-by-instances="true">
+     <classes>
+         <class name= "com.qa.sonyops.testcases.LoginPageCETest">  
+            <methods>
+               <include name = "ValidateLoginToCEportal" />
+            </methods>
+         </class>
+         <class name= "com.qa.sonyops.testcases.HomePageCETest"> 
+            <methods>
+               <include name="ValidateHomePage_isDisplayed" />
+               <include name="ValidateColumnsinHomePage" />
+               <include name="ValidateTransferHistoryEntries" />
+               <include name="ValidateUploadDetailsPopup" />
+               <include name="ValidateLogoutFromCEportal" />
+               <include name="ValidateSearchResult_ForInvalidData" />
+               <include name="ValidateLogoutFromCEportal" />
+           </methods>
+         </class>
+         <class name= "com.qa.sonyops.testcases.LoginPageTest">  
+           <methods>
+              <include name="ValidateLoginForValidAndInvalidData" />
+           </methods>
+         </class>
+         <class name= "com.qa.sonyops.testcases.HomePageTest">  </class>
+         <class name= "com.qa.sonyops.testcases.CatalogPageTest">  </class>
+         <class name= "com.qa.sonyops.testcases.CatalogPlayerPageTest">  </class>
+         <class name= "com.qa.sonyops.testcases.CatalogManagerPageTest">  </class>
+         <class name= "com.qa.sonyops.testcases.SearchLibraryPageTest">  </class>
+         <class name= "com.qa.sonyops.testcases.SubtitlePageTest">  </class>
+         <class name= "com.qa.sonyops.testcases.OpsPageTest">  </class>
+         
+         <class name= "com.qa.sonyops.testcases.SmarttaskerPageTest">  </class> 
+         
+         
+    </classes>
+  </test> 
+</suite>

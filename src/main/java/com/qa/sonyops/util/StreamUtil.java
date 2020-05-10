@@ -121,7 +121,7 @@ public class StreamUtil extends BaseClass
 				testutil=new TestUtil();
 				String TC_before = stream.GetTimeCode_in(TC_IN);
 				String TC_out = stream.GetTotalDurationOfVideo(TC_OUT);
-				Thread.sleep(3000);
+				Thread.sleep(2000);
 				stream.ClickPlay_pausekey(Play);
 				Thread.sleep(20000);
 				stream.ClickPlay_pausekey(Play);

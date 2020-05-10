@@ -20,6 +20,7 @@ import com.qa.sonyops.util.TestNGListeners;
 @Listeners(TestNGListeners.class)
 public class OpsPageTest extends BaseClass	
 {
+	BaseClass baseclass;
 	LoginPage loginpage;
 	HomePage homepage;
 	OpsPage opspage;
@@ -31,7 +32,9 @@ public class OpsPageTest extends BaseClass
 	@BeforeMethod
 	public void Setup() throws Exception
 	{
-		initialisation("bc_url");
+		baseclass=new BaseClass();
+		baseclass.initialisation("bc_url");
+		//initialisation("bc_url");
 		loginpage=new LoginPage();
 		loginpage.LogintoBC(prop.getProperty("username"), prop.getProperty("password"));
 		homepage=new HomePage();
@@ -40,21 +43,21 @@ public class OpsPageTest extends BaseClass
 	
 	}
 	
-	@Test(priority=1 , enabled=false)
+	@Test(priority=1 , enabled=true)
 	public void ValidateDefaultLandingPage_ForOpsRoleIsShows()
 	{
 		boolean showsLabel=opspage.GetThelandingPageLabel();
 		Assert.assertTrue(showsLabel, "Shows page is not displaying");
 	}
 	
-	@Test(priority=2 , enabled=false)
+	@Test(priority=2 , enabled=true)
 	public void ValidatePaginationControlsLoading()
 	{
 		boolean PaginationIconPresent=opspage.checkPageIcon();
 		Assert.assertTrue(PaginationIconPresent);
 	}
 	
-	@Test(priority=3, enabled=false)
+	@Test(priority=3, enabled=true)
 	public void ValidateDashboardIsLoading()        //if columns are present obviously DashboarD will be loading
 	{
 		List<String> original_col_list = opspage.getColumnsCountAndName();
@@ -62,21 +65,21 @@ public class OpsPageTest extends BaseClass
 		Assert.assertEquals(original_col_list, Expected_col_list , "Columns are not matching with expected columns");
 	}
 	
-	@Test(priority=4 ,enabled=false)
+	@Test(priority=4 ,enabled=true)
 	public void ValidateFilterPopUpIsDisplayed()
 	{
 		boolean filter_status=opspage.ClickOnfilterIcon();
 		Assert.assertTrue(filter_status , "Filter popUp is not displaying");
 	}
 	
-	@Test(priority=5 , enabled = false)
+	@Test(priority=5 , enabled = true)
 	public void ValidateAllFilterOptionsAreDisplayingInFilterPopUp()
 	{
 		opspage.ClickOnfilterIcon();
 		opspage.getAllFilterOptions();
 	}
 	
-	@Test
+	@Test(priority=6,enabled=true)
 	public void ValidateSearchResetFunctionality()
 	{
 		boolean Page_refreshing=opspage.SearchResetFunctionality();

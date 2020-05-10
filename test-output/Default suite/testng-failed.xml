@@ -3,15 +3,15 @@
 <suite name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="com.qa.sonyops.testcases.SubtitlePageTest">
+      <class name="com.qa.sonyops.testcases.SmarttaskerPageTest">
         <methods>
-          <include name="tearDown"/>
           <include name="LoadChromeDataToTempFolder"/>
           <include name="DeleteTemporaryFolder"/>
-          <include name="setup"/>
-          <include name="ValiadteEssenceUpload"/>
+          <include name="tearDown"/>
+          <include name="check"/>
+          <include name="setUp"/>
         </methods>
-      </class> <!-- com.qa.sonyops.testcases.SubtitlePageTest -->
+      </class> <!-- com.qa.sonyops.testcases.SmarttaskerPageTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

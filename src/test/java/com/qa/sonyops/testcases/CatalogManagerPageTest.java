@@ -17,6 +17,7 @@ public class CatalogManagerPageTest extends BaseClass
 	HomePage homepage;
 	CatalogManagerPage c_manager;
 	CatalogPage catalogpage;
+	BaseClass baseclass;
     public CatalogManagerPageTest()
     {
     	super();
@@ -25,8 +26,9 @@ public class CatalogManagerPageTest extends BaseClass
     @BeforeMethod
     public void setup() throws Exception
     {
-    	
-    	initialisation("bc_url");
+    	baseclass=new BaseClass();
+    	baseclass.initialisation("bc_url");
+    	//initialisation("bc_url");
     	loginpage=new LoginPage();
     	loginpage.LogintoBC(prop.getProperty("username"), prop.getProperty("password"));
     	homepage=new HomePage();

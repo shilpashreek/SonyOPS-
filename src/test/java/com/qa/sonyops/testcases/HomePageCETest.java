@@ -25,9 +25,10 @@ public class HomePageCETest extends BaseClass
 	
 @BeforeMethod
 public void setup()
-
 { 
-	initialisation("ce_url");
+	baseclass=new BaseClass();
+	baseclass.initialisation("ce_url");
+	//initialisation("ce_url");
 	logince= new LoginPageCE();
 	logince.login(prop.getProperty("username"), prop.getProperty("password"));
 	homece=new HomePageCE();

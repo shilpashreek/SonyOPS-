@@ -26,7 +26,9 @@ public LoginPageTest()
 @BeforeMethod
 public void setup()
 {
-	initialisation("bc_url");
+	baseclass=new BaseClass();
+	baseclass.initialisation("bc_url");
+	//initialisation("bc_url");
 	loginpage=new LoginPage();
 }
 
@@ -45,7 +47,7 @@ public Object[][] getLoginData()
 }
 
 @Test(dataProvider="getLoginData")
-public void ValidateLoginForMultipleData(String username,String password)
+public void ValidateLoginForValidAndInvalidData(String username,String password)
 {
 	homepage=loginpage.LogintoBC(username, password);
 }

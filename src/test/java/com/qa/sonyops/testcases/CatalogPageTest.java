@@ -16,7 +16,7 @@ import com.qa.sonyops.util.TestUtil;
 @Listeners(TestNGListeners.class)
 public class CatalogPageTest extends BaseClass
 {
-	static BaseClass baseclass;
+	BaseClass baseclass;
 	static LoginPage loginpage;
 	static HomePage homepage;
 	static CatalogPage catalogpage;
@@ -42,35 +42,37 @@ public class CatalogPageTest extends BaseClass
 @BeforeMethod
 public void SetUp() throws Exception
 {
-	initialisation("bc_url");
+	baseclass=new BaseClass();
+	baseclass.initialisation("bc_url");
+	//initialisation("bc_url");
 	loginpage=new LoginPage();
 	homepage=new HomePage();
 	homepage=loginpage.LogintoBC(prop.getProperty("username"), prop.getProperty("password"));
 	catalogpage=homepage.SelectCatalogUserRole();
 }
 
-@Test(priority=1,enabled=false)
+@Test(priority=1,enabled=true)
 public void ValidateActiveUserRole()
 {
 	String role_name = catalogpage.GetCurrentRoleDetails();
 	Assert.assertEquals(role_name, "Sony Catalog User");
 }
 
-@Test(priority=2,enabled=false)
+@Test(priority=2,enabled=true)
 public void ValidateDashboardLabel()
 {
 	String Dashboard_name = catalogpage.GetDashboardLabel();
 	Assert.assertEquals(Dashboard_name, "CATALOGING");
 }
 
-@Test(priority=3,enabled=false)
+@Test(priority=3,enabled=true)
 public void ValidateFilterPopUp() throws InterruptedException
 {
 	boolean b = catalogpage.ClickApplyFilters();
 	Assert.assertTrue(b , "filters popUp is not displayed");
 }
 
-@Test(priority=4,enabled=false)
+@Test(priority=4,enabled=true)
 public void ValidateResultsAreDisplayedAccToAppliedFilters() throws InterruptedException
 {
 	PageCountInitially = catalogpage.GetNumberOfPages();
@@ -98,7 +100,7 @@ public void ValidateResultsAreDisplayedAccToAppliedFilters() throws InterruptedE
 }
 
 	
-@Test(priority=5,enabled=false) 
+@Test(priority=5,enabled=true) 
  public void ValidateCatalogPopUp() throws InterruptedException 
  {
 	 catalogpage.SearchForTestAsset(prop.getProperty("TestAsset_Name"));
@@ -112,7 +114,7 @@ public void ValidateResultsAreDisplayedAccToAppliedFilters() throws InterruptedE
 	 Assert.assertTrue(AssetTitle.contains("Test"),"Selected Asset doesnot contain test in the title");
 }
 
-@Test(enabled=false)
+@Test(priority=6,enabled=true)
 public void ValidateAutoSuggestionsIsDisplaying()
 {
 	catalogpage.ClickOnLibrarySearch("tes");
@@ -120,7 +122,7 @@ public void ValidateAutoSuggestionsIsDisplaying()
 	Assert.assertTrue(AutoSuggestions>0 , "Autosuggestions is not displaying");
 }
 
-@Test(enabled=false)
+@Test(priority=7 ,enabled=true)
 public void ValidateSearchforValidData()
 {
 	catalogpage.ClickOnLibrarySearch("tes");
@@ -130,7 +132,7 @@ public void ValidateSearchforValidData()
 	
 }
 
-@Test(enabled=true)
+@Test(priority=8,enabled=true)
 public void ValidateSearchForInvalidData()
 {
 	catalogpage.ClickOnLibrarySearch("abc");
@@ -143,6 +145,6 @@ public void ValidateSearchForInvalidData()
 @AfterMethod
 public void tearDown()
 {
-	//driver.quit();
+	driver.quit();
 }
 }

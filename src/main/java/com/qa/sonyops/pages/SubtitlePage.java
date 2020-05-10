@@ -59,6 +59,9 @@ WebElement Essence_Upload_Btn;
 
 @FindBy(id = "browseBtn")
 WebElement Essence_browseBtn;
+
+@FindBy(css = "div#uploadbtn")
+WebElement UploadBtn_EssenceTab;
           
      public SubtitlePage()
      {
@@ -79,10 +82,16 @@ WebElement Essence_browseBtn;
     //method to get all the options from subtitle status filter options
     public List<String> getSubtitleFilterOptions() throws Exception
     {
+    	
+    	try {
+    	subtitlepage=new SubtitlePage();
+    	subtitlepage.waitForThePageToLoad();
+    	}catch(Exception e)
+    	{
+    		System.out.println(e.getMessage());
+    	}
     	catalogpage=new CatalogPage();
-    	//subtitlepage=new SubtitlePage();
-    	//subtitlepage.waitForThePageToLoad();
-    	Thread.sleep(3000);
+    	//Thread.sleep(3000);
     	catalogpage.ClickApplyFilters();
     	Select s=new Select(subtitle_filter);
     	List<WebElement> subtitle_status_options = s.getOptions();
@@ -110,7 +119,7 @@ WebElement Essence_browseBtn;
     {
     	catalogpage=new CatalogPage();
     	subtitlepage=new SubtitlePage();
-    	Thread.sleep(3000);
+    	Thread.sleep(4000);
     	catalogpage.ClickApplyFilters();
     	testutil=new TestUtil();
     	testutil.HandlingDropDown(subtitle_filter, "Pending");
@@ -137,17 +146,22 @@ WebElement Essence_browseBtn;
     	String Subtitle_statusXpath_A = "]/td[6]/div";
     	
     	//iterate through pages
-		for(int i=1 ; i<=pageCount ; i++) 
+		for(int i=1 ; i<=pageCount ; i++)   //.linked.linkedItem  xpath("//div[@class='linked linkedItem']")
 		  { 
-			List<WebElement> Confirm_links = driver.findElements(By.xpath("//div[@class='linked linkedItem']"));
-	    	System.out.println("Confirm links in subtitle dashboard" +Confirm_links.size());
-			  if(Confirm_links.size()>0)
+			List<WebElement> Confirm_links = driver.findElements(By.cssSelector(".linked.linkedItem"));
+			int Total_confirm_links = Confirm_links.size();
+	    	System.out.println("Confirm links in subtitle dashboard" +" " +Total_confirm_links);
+			  if(Total_confirm_links>1)
 			  {
-		          WebElement TestAsset=driver.findElement(By.xpath(Title_xpath_b+i+Title_xpath_A));
+		          for(i=1; i<=Total_confirm_links ;i++)
+		          {
+				  WebElement TestAsset=driver.findElement(By.xpath(Title_xpath_b+i+Title_xpath_A));
 		          SubtitleAsset = TestAsset.getText();
+		          System.out.println("Subtitle is confirmed for the asset" +SubtitleAsset);
 		          WebElement SubtitleStatus=driver.findElement(By.xpath(Subtitle_statusXpath_b+i+Subtitle_statusXpath_A));
 		          
-		          if(SubtitleAsset.contains("Test") && SubtitleStatus.getText().equals("Confirm"))
+		        //  if(SubtitleAsset.contains("Test") && SubtitleStatus.getText().equals("Confirm"))
+		          if(SubtitleAsset.contains("Test") && SubtitleStatus.isEnabled() )  
 		          {
 		        	  JavascriptUtils.scrollIntoView(Confirm_link, driver);
 		        	  TestUtil.Click(driver, 20, Confirm_link);
@@ -157,6 +171,7 @@ WebElement Essence_browseBtn;
 		        	  SuccessAlert=Alert.getText();
 		        	  return SuccessAlert;
 		          }
+			  }
 			  }else  {
 				  TestUtil.Click(driver, 10, Navigate_To_Next_Page);
 				  }
@@ -230,7 +245,7 @@ WebElement Essence_browseBtn;
     }
     
     //method validate subtitle player metadata
-    public void EssenceUpload() throws Exception
+    public String EssenceUpload() throws Exception
     {
     	catalogpage=new CatalogPage();
     	Thread.sleep(3000);
@@ -238,15 +253,17 @@ WebElement Essence_browseBtn;
     	testutil=new TestUtil();
     	testutil.HandlingDropDown(subtitle_filter, "Completed");
     	TestUtil.Click(driver, 10, FilterSearch);
-    	Thread.sleep(2000);
+    	Thread.sleep(3000);
     	subtitlepage=new SubtitlePage();
     	subtitlepage.TestAssetwithConfirmedStatus();
     	TestUtil.Click(driver, 20, Essence_Upload_Btn);
-    	subtitlepage.selectEssenceType();
+    	String SuccessAlert=subtitlepage.selectEssenceType();
+    	return SuccessAlert;
     
     }
     
-    public void selectEssenceType() throws Exception
+    //method to fill all mandatory fields ,browse and upload subtitle file
+    public String selectEssenceType() throws Exception
     {
     	WebElement EssenceType=driver.findElement(By.xpath("//select[@id='ddlEssenceType']"));
     	WebElement language=driver.findElement(By.xpath("//select[@id='ddlLanguage']"));
@@ -254,12 +271,25 @@ WebElement Essence_browseBtn;
         testutil.HandlingDropDown(EssenceType, "Subtitles");
         Thread.sleep(2000);
         testutil.HandlingDropDown(language, "English");
-        Thread.sleep(4000);
+        Thread.sleep(2000);
     	TestUtil.Click(driver, 20, Essence_browseBtn);
-    	Thread.sleep(5000);
+    	Thread.sleep(10000);
     	Runtime.getRuntime().exec("C:\\Users\\Manjushree\\Documents\\SonyOPS-\\AutoITscripts\\EssenceUpload.exe");
     	WebElement Essence_Format=driver.findElement(By.xpath("//select[@class='essFormatDropDown']"));
     	testutil.HandlingDropDown(Essence_Format, "SRT");
+    	Thread.sleep(3000);
+    	TestUtil.Click(driver, 20, UploadBtn_EssenceTab);
+    	Thread.sleep(4000);
+    	//Runtime.getRuntime().exec("C:\\Users\\Manjushree\\Documents\\SonyOPS-\\AutoITscripts\\DenyAsperaConnect.exe");
+    	Runtime.getRuntime().exec("C:\\Users\\Manjushree\\Documents\\SonyOPS-\\AutoITscripts\\AllowAsperaConnections.exe");
+    	try {
+    	System.out.println(Alert.getText());
+    	return Alert.getText();
+    	}catch(Exception e)
+    	{
+    		System.out.println(e.getMessage());
+    	}
+    	return Alert.getText();
     }
     
     
