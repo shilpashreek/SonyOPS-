@@ -12,6 +12,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 import org.testng.annotations.Listeners;
 
 import com.qa.sonyops.base.BaseClass;
@@ -71,6 +72,12 @@ public class SmarttaskerPage extends BaseClass
 	
 	@FindBy(xpath = "(//input[@class='checkboxes selectAllCheckbox'])[1]")
 	WebElement SelectAll_checkbox_right;
+	
+	@FindBy(xpath= "(//div[@class='go-button-wf'])[1]")
+	WebElement RightPanel_gobBtn;
+	
+	@FindBy(css = ".dateTypeSmartTasker")
+	WebElement dateTypeSmartTasker;
 	
 	//processTemplatePanel  processTemplatePanel
 
@@ -378,13 +385,113 @@ public String getStartedTime(int index) throws ParseException
 		  TestUtil.Click(driver, 10, defaulttemplatename);
 	  }
 	  }
+	  
+	  TestUtil.Click(driver, 20, RightPanel_gobBtn);
 	  return status;
-	 
-	 
+ 
  }
  
+ public boolean ProcessExecutionTrendGraph_isDisplayed()
+ {
+	 boolean status=false;
+	 try {
+	 List<WebElement> graphs = driver.findElements(By.className("a10"));
+	 String bars = graphs.get(0).getAttribute("usemap");
+	 if(bars!=null)
+	 {
+		 status=true;
+	 }else{
+		 status=false;
+	      }
+	 }catch(Exception e)
+	    {
+		 System.out.println( "process execution trend graph is not displayed" + " " +e.getMessage());
+	    }
+	 return status;
+ }
  
+ public boolean SLAcomplianceGraph_isdisplayed()
+ {
+	 boolean status=false;
+	 try {
+	 List<WebElement> graphs = driver.findElements(By.className("a10"));
+	 String bars = graphs.get(1).getAttribute("usemap");
+	 if(bars!=null)
+	 {
+		 status=true;
+	 }else{
+		 status=false;
+	      }
+	 }catch(Exception e)
+	    {
+		 System.out.println( "SLA Compliance graph is not displayed" + " " +e.getMessage());
+	    }
+	 return status;
+ }
  
+ public boolean[] isGraphsDisplayed()
+ {
+	 smarttasker=new SmarttaskerPage();
+	 boolean bar_graph = smarttasker.ProcessExecutionTrendGraph_isDisplayed();
+	 boolean piechart = smarttasker.SLAcomplianceGraph_isdisplayed();
+	boolean graphStatus[]= {bar_graph , piechart};
+	Assert.assertTrue(bar_graph && piechart); 
+	return graphStatus;
+ }
+ 
+ public void selectDateTypeSmartTasker()
+ {
+	testutil= new TestUtil();
+	testutil.HandlingDropDown(dateTypeSmartTasker, "+/- 6 Months");
+ }
+ 
+ public void clickOnBarByIndex(int index)
+ {
+	 String href=null;
+	 List<WebElement> barchartbars = driver.findElements(By.xpath(prop.getProperty("barChartBars")));
+	try { 
+	 try {
+	 href=barchartbars.get(index).getAttribute("href");
+	 barchartbars.get(index).click();
+	 }catch(Exception e)
+	 {
+		 barchartbars.get(index+1).click(); 
+	 }
+ }catch(Exception e)
+ {
+	 System.out.println(e.getMessage());
+ }
+ 
+ }
+ 
+ public void getBarsCountInProcessExecutionGraph() throws InterruptedException
+ {
+	 List<WebElement> barchartbars = driver.findElements(By.xpath(prop.getProperty("barChartBars")));
+	 int barChartsCount=barchartbars.size();
+	 System.out.println("bars in bargraph" +" "+barChartsCount);
+	 //return barChartsCount;
+	 int ctr=0; String taskType= "null";
+	 if(barChartsCount>0)
+	 {
+		 System.out.println("Drill down is available");
+	 }else {
+		 System.out.println("Drill down is unavailable");
+	 }
+	 do {
+		smarttasker= new SmarttaskerPage();
+		taskType=smarttasker.getTaskTypeinPieChartByindex(3);
+		Thread.sleep(2000);
+		smarttasker.clickOnBarByIndex(3);
+		System.out.println(taskType);
+		ctr++;
+	 }while(!taskType.equalsIgnoreCase(smarttasker.getTaskTypeinPieChartByindex(3)));
+ }
+ 
+ public String getTaskTypeinPieChartByindex(int index)
+ {
+	 List<WebElement> barchartbars = driver.findElements(By.xpath(prop.getProperty("barChartBars")));
+	 return barchartbars.get(index).getAttribute("title");
+ }
  
  
 }

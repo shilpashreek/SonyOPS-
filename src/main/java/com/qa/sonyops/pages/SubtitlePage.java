@@ -136,7 +136,7 @@ WebElement UploadBtn_EssenceTab;
     }
     
     //method to search and click on the confirm link
-    public String ClickOnConfirmLink()
+    public String ClickOnConfirmLink() throws InterruptedException
     {
     	String SuccessAlert = "null";
     	String Title_xpath_b = prop.getProperty("Title_xpath_before"); 
@@ -174,6 +174,7 @@ WebElement UploadBtn_EssenceTab;
 			  }
 			  }else  {
 				  TestUtil.Click(driver, 10, Navigate_To_Next_Page);
+				  Thread.sleep(3000);
 				  }
 		  }
 		return SuccessAlert;

@@ -2,26 +2,28 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite parallel="none" name="Failed suite [SonyOps tenant Automated Test Cases]">
   <listeners>
+    <listener class-name="com.qa.sonyops.util.TestNGListeners"/>
     <listener class-name="com.qa.sonyops.ExtentReportListener.ExtentReporterNG"/>
   </listeners>
   <test parallel="none" name="SonyOps Test cases(failed)">
     <classes>
-      <class name="com.qa.sonyops.testcases.LoginPageTest">
+      <class name="com.qa.sonyops.testcases.LoginPageCETest">
         <methods>
           <include name="LoadChromeDataToTempFolder"/>
           <include name="DeleteTemporaryFolder"/>
+          <include name="tearDown"/>
+          <include name="ValidateLoginToCEportal" invocation-numbers="0"/>
+          <include name="initialization"/>
+          <include name="endReport"/>
+        </methods>
+      </class> <!-- com.qa.sonyops.testcases.LoginPageCETest -->
+      <class name="com.qa.sonyops.testcases.LoginPageTest">
+        <methods>
           <include name="tearDown"/>
           <include name="ValidateLoginForValidAndInvalidData" invocation-numbers="0"/>
           <include name="setup"/>
         </methods>
       </class> <!-- com.qa.sonyops.testcases.LoginPageTest -->
-      <class name="com.qa.sonyops.testcases.LoginPageCETest">
-        <methods>
-          <include name="tearDown"/>
-          <include name="ValidateLoginToCEportal" invocation-numbers="0"/>
-          <include name="initialization"/>
-        </methods>
-      </class> <!-- com.qa.sonyops.testcases.LoginPageCETest -->
       <class name="com.qa.sonyops.testcases.HomePageCETest">
         <methods>
           <include name="setup"/>

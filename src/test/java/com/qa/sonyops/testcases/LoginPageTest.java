@@ -32,9 +32,10 @@ public void setup()
 	loginpage=new LoginPage();
 }
 
-@Test(enabled = false)
+@Test(priority=1,enabled = true)
 public void ValidateLoginToBCportal()
 {
+	logger=extent.startTest("ValidateLoginToBCportal");
 	homepage=loginpage.LogintoBC(prop.getProperty("username"), prop.getProperty("password"));
 }
 
@@ -46,9 +47,10 @@ public Object[][] getLoginData()
 	return Login_data;
 }
 
-@Test(dataProvider="getLoginData")
+@Test(priority=2, dataProvider="getLoginData")
 public void ValidateLoginForValidAndInvalidData(String username,String password)
 {
+	logger=extent.startTest("ValidateLoginForValidAndInvalidData");
 	homepage=loginpage.LogintoBC(username, password);
 }
 

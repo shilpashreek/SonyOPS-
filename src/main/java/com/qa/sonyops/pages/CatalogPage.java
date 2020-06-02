@@ -214,7 +214,7 @@ public void ClickOnLibrarySearch(String SearchText)
 }
 
 
-public int CaptureAutoSuggesstions()
+public int CaptureAutoSuggesstions() throws Exception
 {
 	List<WebElement> AutoSuggestions = driver.findElements(By.xpath(prop.getProperty("suggestion_list")));
 	TestUtil.TakeScreenshot_pass_fail(this.getClass().getName());

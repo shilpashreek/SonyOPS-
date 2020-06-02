@@ -4,6 +4,8 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 import org.apache.commons.io.FileUtils;
@@ -266,16 +268,14 @@ public void MouseHover(WebElement ele)
 }
 
 //method to take Screenshot in case of pass or fail of TestCase execution
-public static void TakeScreenshot_pass_fail(String testMethodName)
+public static String TakeScreenshot_pass_fail(String testMethodName) throws Exception
 {
+	String date=new SimpleDateFormat("yyyyMMDDhhmmss").format(new Date());
 	File src=((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-	try
-	{
-		FileUtils.copyFile(src, new File("C:/Users/Manjushree/Documents/SonyOPS-/screenshots/" +testMethodName+ "_"+".png"));
-	} catch (IOException e) 
-	{
-		e.printStackTrace();
-	}
+	String destination =System.getProperty("user.dir")+ File.separator +"screenshots"+File.separator+testMethodName+ date+""+ ".png";
+	File dest = new File(destination);
+	FileUtils.copyFile(src, dest);
+	return destination;
 }
 
 //Method to TakeScreenshot in case of exception
@@ -292,7 +292,18 @@ public static void Pageloading(WebDriver driver,int timeout)
 	until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector("div#waitingCatalogPopup")));
 }
 
+//method to take screenshot
+public static String takeScreenshot(WebDriver driver, String screeshotName) throws IOException
+{
+	String date=new SimpleDateFormat("yyyyMMDDhhmmss").format(new Date());
+	
+	File src = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+	String destination =System.getProperty("user.dir")+ File.separator +"screenshots"+File.separator+screeshotName+ date+""+ "_png";
+    File dest= new File(destination);
+	FileUtils.copyFile(src, dest);
+	return destination;
 
+}
 
 
 

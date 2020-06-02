@@ -54,6 +54,7 @@ public void SetUp() throws Exception
 @Test(priority=1,enabled=true)
 public void ValidateActiveUserRole()
 {
+	logger=extent.startTest("ValidateActiveUserRole");
 	String role_name = catalogpage.GetCurrentRoleDetails();
 	Assert.assertEquals(role_name, "Sony Catalog User");
 }
@@ -61,6 +62,7 @@ public void ValidateActiveUserRole()
 @Test(priority=2,enabled=true)
 public void ValidateDashboardLabel()
 {
+	logger=extent.startTest("ValidateDashboardLabel");
 	String Dashboard_name = catalogpage.GetDashboardLabel();
 	Assert.assertEquals(Dashboard_name, "CATALOGING");
 }
@@ -68,6 +70,7 @@ public void ValidateDashboardLabel()
 @Test(priority=3,enabled=true)
 public void ValidateFilterPopUp() throws InterruptedException
 {
+	logger=extent.startTest("ValidateFilterPopUp");
 	boolean b = catalogpage.ClickApplyFilters();
 	Assert.assertTrue(b , "filters popUp is not displayed");
 }
@@ -75,6 +78,7 @@ public void ValidateFilterPopUp() throws InterruptedException
 @Test(priority=4,enabled=true)
 public void ValidateResultsAreDisplayedAccToAppliedFilters() throws InterruptedException
 {
+	logger=extent.startTest("ValidateResultsAreDisplayedAccToAppliedFilters");
 	PageCountInitially = catalogpage.GetNumberOfPages();
 	PageCountInitially_int=Integer.parseInt(PageCountInitially);
 	
@@ -103,6 +107,7 @@ public void ValidateResultsAreDisplayedAccToAppliedFilters() throws InterruptedE
 @Test(priority=5,enabled=true) 
  public void ValidateCatalogPopUp() throws InterruptedException 
  {
+	logger=extent.startTest("ValidateCatalogPopUp");
 	 catalogpage.SearchForTestAsset(prop.getProperty("TestAsset_Name"));
 	 TestUtil.Buffering(driver, 40);
 	 catalogpage.ClickApplyFilters(); 
@@ -115,8 +120,9 @@ public void ValidateResultsAreDisplayedAccToAppliedFilters() throws InterruptedE
 }
 
 @Test(priority=6,enabled=true)
-public void ValidateAutoSuggestionsIsDisplaying()
+public void ValidateAutoSuggestionsIsDisplaying() throws Exception
 {
+	logger=extent.startTest("ValidateAutoSuggestionsIsDisplaying");
 	catalogpage.ClickOnLibrarySearch("tes");
 	int AutoSuggestions=catalogpage.CaptureAutoSuggesstions();
 	Assert.assertTrue(AutoSuggestions>0 , "Autosuggestions is not displaying");
@@ -125,6 +131,7 @@ public void ValidateAutoSuggestionsIsDisplaying()
 @Test(priority=7 ,enabled=true)
 public void ValidateSearchforValidData()
 {
+	logger=extent.startTest("ValidateSearchforValidData");
 	catalogpage.ClickOnLibrarySearch("tes");
 	Asset_selected=catalogpage.CheckIfSuggestionListIsdisplaying();
 	AssetLibraryAsset=catalogpage.GetAssetTitleFromAssetLibrary();
@@ -135,6 +142,7 @@ public void ValidateSearchforValidData()
 @Test(priority=8,enabled=true)
 public void ValidateSearchForInvalidData()
 {
+	logger=extent.startTest("ValidateSearchForInvalidData");
 	catalogpage.ClickOnLibrarySearch("abc");
 	String ActualErrorMsg=catalogpage.CheckIfSuggestionListIsdisplaying();
 	Assert.assertTrue(ActualErrorMsg.startsWith("Your search"));

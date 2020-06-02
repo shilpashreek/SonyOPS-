@@ -102,6 +102,7 @@ public class SubtitlePageTest extends BaseClass
     @Test(priority=1,enabled=true)
     public void ValidateSubtitleStatusFilter() throws Exception
     {
+    	logger=extent.startTest("ValidateSubtitleStatusFilter");
     	loginpage=new LoginPage();
     	loginpage.LogintoBC(prop.getProperty("username"), prop.getProperty("password"));
     	homepage=new HomePage();
@@ -121,6 +122,7 @@ public class SubtitlePageTest extends BaseClass
     @Test(priority=2 ,enabled=true, dependsOnMethods = {"ValidateSubtitleStatusFilter"})
     public void SubmitSubtitleStatusAndCaptureAlertMessage() throws Exception
     {
+    	logger=extent.startTest("SubmitSubtitleStatusAndCaptureAlertMessage");
     	subtitlepage=new SubtitlePage();
     	catalogpage=new CatalogPage();
     	catalogpage.SearchForTestAsset("Test");
@@ -136,6 +138,7 @@ public class SubtitlePageTest extends BaseClass
     @Test(priority=3 ,enabled=true , dependsOnMethods = {"ValidateSubtitleStatusFilter","SubmitSubtitleStatusAndCaptureAlertMessage"})
     public void ValidateSubtitleStatusIsChangedAfterSubmittingStatus() throws Exception
     {
+    	logger=extent.startTest("ValidateSubtitleStatusIsChangedAfterSubmittingStatus");
     	subtitlepage=new SubtitlePage();
     	catalogpage=new CatalogPage();
     	catalogpage.SearchForTestAsset("Test");
@@ -147,6 +150,7 @@ public class SubtitlePageTest extends BaseClass
     @Test(priority=4,dependsOnMethods= {"ValidateSubtitleStatusFilter"},enabled=true)
     public void ValiadteEssenceUpload() throws Exception
     {
+    	logger=extent.startTest("ValiadteEssenceUpload");
     	subtitlepage=new SubtitlePage();
     	catalogpage=new CatalogPage();
     	catalogpage.SearchForTestAsset("Test");

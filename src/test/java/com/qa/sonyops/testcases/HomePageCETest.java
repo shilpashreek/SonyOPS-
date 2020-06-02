@@ -37,13 +37,17 @@ public void setup()
 @Test(priority=1 , enabled=true)
 public void ValidateHomePage_isDisplayed()
 {
+	logger=extent.startTest("ValidateHomePage_isDisplayed");
 	String Title=homece.GetHomePageTitle();
+	log.info("home page title" +Title);
 	Assert.assertEquals(Title, "SonyOPS Clear EDGE");
+	//log.error("Assert failed as" +Title);
 }
 
 @Test(priority=2,enabled=true)
 public void VerifyRefreshIcon()
 {
+	logger=extent.startTest("VerifyRefreshIcon");
 	boolean Refresh_icon=homece.VerifyRefreshIconIsPresent();
 	Assert.assertTrue(Refresh_icon);
 }
@@ -51,6 +55,7 @@ public void VerifyRefreshIcon()
 @Test(priority=3, enabled=true)
 public void ValidateColumnsinHomePage()
 {
+	logger=extent.startTest("ValidateColumnsinHomePage");
 	int Colcount = homece.GetColumns();
 	Assert.assertEquals(Colcount, 7 , "total columns displaying are not matching with the expected column count");
 }
@@ -58,6 +63,7 @@ public void ValidateColumnsinHomePage()
 @Test(priority=4 , enabled=true)
 public void ValidateTransferHistoryEntries()
 {
+	logger=extent.startTest("ValidateTransferHistoryEntries");
 	boolean Dashboard_status = homece.GetRowCount();
 	Assert.assertTrue(Dashboard_status);
 }
@@ -65,6 +71,7 @@ public void ValidateTransferHistoryEntries()
 @Test(priority=5 , enabled=true)
 public void ValidateHomePageEntriesAreDisplaying()
 {
+	logger=extent.startTest("ValidateHomePageEntriesAreDisplaying");
 	boolean Pagination = homece.CheckIfPaginationIsPresent();
 	Assert.assertTrue(Pagination);
 }
@@ -72,6 +79,7 @@ public void ValidateHomePageEntriesAreDisplaying()
 @Test(priority=6, enabled=true)
 public void validateFileUploadPopup()
 {
+	logger=extent.startTest("validateFileUploadPopup");
 	boolean b = homece.UploadPopUp();
 	Assert.assertTrue(b , "File upload pop-up is not displaying");
 	System.out.println("Upload popUp is displaying");
@@ -81,6 +89,7 @@ public void validateFileUploadPopup()
 @Test(priority=7 , enabled= true)
 public void ValidateUploadDetailsPopup()
 {
+	logger=extent.startTest("ValidateUploadDetailsPopup");
 	String Clear_file_name=homece.UploadDetails();
 	Assert.assertTrue(Clear_file_name.contains("SW--2050") , "Upload details popUp is not displayed");
 }
@@ -88,6 +97,7 @@ public void ValidateUploadDetailsPopup()
 @Test(priority=8 , enabled= true)
 public void ValidateLogoutFromCEportal()
 {
+	logger=extent.startTest("ValidateLogoutFromCEportal");
 	String Page_Title=homece.LogoutPortal();
 	Assert.assertTrue(Page_Title.contains("Clear EDGE"), "portal is not logged out");
 }
@@ -95,6 +105,7 @@ public void ValidateLogoutFromCEportal()
 @Test(priority=9 , enabled=true)
 public void ValidateSearchResult_ForInvalidData()
 {
+	logger=extent.startTest("ValidateSearchResult_ForInvalidData");
 	String Search_result=homece.SearchResultForInvalidData();  //No data found for transfer history.
 	Assert.assertTrue(Search_result.contains("No data found"));
 }
@@ -102,6 +113,7 @@ public void ValidateSearchResult_ForInvalidData()
 @Test(priority=10 , enabled=true)
 public void ValidateRefreshFunctionality() throws Exception
 {
+	logger=extent.startTest("ValidateRefreshFunctionality");
 	boolean Page_is_getting_refreshed=homece.PageRefresh();
 	Assert.assertTrue(Page_is_getting_refreshed);
 }

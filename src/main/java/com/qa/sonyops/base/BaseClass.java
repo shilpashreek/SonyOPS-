@@ -9,6 +9,7 @@ import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.io.FileUtils;
+import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeDriverService;
@@ -16,11 +17,13 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
 import org.testng.annotations.AfterSuite;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeSuite;
-import org.testng.log4testng.Logger;
-
 import com.qa.sonyops.util.TestUtil;
 import com.qa.sonyops.util.WebEventListener;
+import com.relevantcodes.extentreports.ExtentReports;
+import com.relevantcodes.extentreports.ExtentTest;
+
 
 public class BaseClass 
 {
@@ -28,7 +31,9 @@ public static WebDriver driver;
 public static Properties prop;
 static WebEventListener eventlistener;
 static EventFiringWebDriver e_driver;
-
+public static Logger log;
+public static ExtentReports extent;
+public static ExtentTest logger;
 
 
      public BaseClass() 
@@ -50,6 +55,15 @@ static EventFiringWebDriver e_driver;
 	  @BeforeSuite(enabled=true) 
 	  public void LoadChromeDataToTempFolder() throws Exception 
 	  { 
+		
+		  extent=new ExtentReports(System.getProperty("user.dir")+File.separator+"Reports"+File.separator+"SonyOpsReport.html", true); //passing true means replace if any old report is present
+		  extent.addSystemInfo("host name", "manjushree windows");
+		  extent.addSystemInfo("User Name", "Manjushree");
+		  extent.addSystemInfo("Environment", "Production");
+		  
+		 //logger=new ExtentTest();
+		 
+		  
 		  File DestFolder = new File("C:\\Users\\Manjushree\\Documents\\SonyOPS-\\temp"); 
 		  File SrcFolder=new File("C:\\Users\\Manjushree\\Documents\\SonyOPS-\\chromedata");
 	  
@@ -57,8 +71,10 @@ static EventFiringWebDriver e_driver;
 	  { 
 		  FileUtils.copyDirectory(SrcFolder, DestFolder);
 	  }else 
-	  { 
-		  DestFolder.mkdir(); FileUtils.copyDirectory(SrcFolder, DestFolder); }
+	    { 
+		  DestFolder.mkdir(); FileUtils.copyDirectory(SrcFolder, DestFolder); 
+		 }
+	  
 	  }
 	 
      
@@ -111,25 +127,34 @@ static EventFiringWebDriver e_driver;
     	e_driver.register(eventlistener);
     	driver=e_driver;  //assign EventFiringWebDriver to our main driver
     	
+    	log = Logger.getLogger(this.getClass().getName());
+    	
         driver.manage().window().maximize();
         driver.manage().deleteAllCookies();
         driver.manage().timeouts().pageLoadTimeout(TestUtil.PAGE_LOAD_TIMEOUT, TimeUnit.SECONDS);  //if application is taking too much of time then we have to increase the time in every script to avoid that will create on util class
         driver.manage().timeouts().implicitlyWait(TestUtil.IMPLICIT_WAIT, TimeUnit.SECONDS);
         driver.get(prop.getProperty(url));
-       
-        
+    
      }
      
-	
-	
+	  @AfterTest 
+	  public void endReport() 
+	  { 
+		  extent.flush(); 
+		// extent.close();  //
+	  }
+	  
 	  @AfterSuite(enabled=true)
 	  public void DeleteTemporaryFolder() throws Exception 
 	  { 
-		  File temp=new File("C:\\Users\\Manjushree\\Documents\\SonyOPS-\\temp");
+		 
+	  File temp=new File("C:\\Users\\Manjushree\\Documents\\SonyOPS-\\temp");
 	  if(temp.exists()) 
-	  { FileUtils.deleteDirectory(temp); 
-	  } 
+	  { 
+		  FileUtils.deleteDirectory(temp); 
 	  }
+		
+ }
 	 
 	 
    

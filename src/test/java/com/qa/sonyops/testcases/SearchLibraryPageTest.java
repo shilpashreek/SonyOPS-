@@ -57,6 +57,7 @@ public void SetUp()
 @Test(priority=1,enabled=false)
 public void ValidateStandalonePlayerIsDisplaying()
 {
+	logger=extent.startTest("ValidateStandalonePlayerIsDisplaying");
 	String AssetTitle = searchpage.ClickOnStandalonePlayer();
 	Assert.assertTrue(!AssetTitle.isEmpty());
 	
@@ -65,6 +66,7 @@ public void ValidateStandalonePlayerIsDisplaying()
 @Test(priority=2,enabled=false)
 public void ValidateStandalonePlayerIsStreaming() throws InterruptedException
 {
+	logger=extent.startTest("ValidateStandalonePlayerIsStreaming");
 	searchpage.ClickOnStandalonePlayer();
 	boolean b=searchpage.CheckIfPlayerisLoading();
 	Assert.assertTrue(b , "Streaming is not happening");
@@ -74,6 +76,7 @@ public void ValidateStandalonePlayerIsStreaming() throws InterruptedException
 @Test(priority=3,enabled=false)
 public void ValidateAssetDetailsIsDisplaying()
 {
+	logger=extent.startTest("ValidateAssetDetailsIsDisplaying");
 	String A_details = searchpage.CheckAssetDetails();
 	Assert.assertTrue(!A_details.isEmpty());
 }
@@ -81,6 +84,7 @@ public void ValidateAssetDetailsIsDisplaying()
 @Test(priority=4,enabled=false)
 public void ValidateInformationModeIsDiaplaying()
 {
+	logger=extent.startTest("ValidateInformationModeIsDiaplaying");
 	boolean b = searchpage.ClickInformationModeIcon();
 	Assert.assertTrue(b,"AssetDetails pop-up is not displaying");
 }
@@ -88,6 +92,7 @@ public void ValidateInformationModeIsDiaplaying()
 @Test(priority=5,enabled=false)
 public void ValidateMetaDataInAssetDetailsPopUp() throws InterruptedException
 {
+	logger=extent.startTest("ValidateMetaDataInAssetDetailsPopUp");
 	searchpage.ClickInformationModeIcon();
 	boolean b=searchpage.CheckMetaDataTab();
 	Assert.assertTrue(b , "Metadata tab is not loading");
@@ -96,6 +101,7 @@ public void ValidateMetaDataInAssetDetailsPopUp() throws InterruptedException
 @Test(priority=6,enabled=false)
 public void ValidateAuditTrialTabDetails() throws InterruptedException
 {
+	logger=extent.startTest("ValidateAuditTrialTabDetails");
 	String ExpectedAuditTab_text="No Audit Trails available for this asset.";
 	searchpage.ClickInformationModeIcon();
 	String AuditText=searchpage.CheckAuditTrialTab();
@@ -106,6 +112,7 @@ public void ValidateAuditTrialTabDetails() throws InterruptedException
 @Test(priority=7,enabled=false)
 public void ValidateEssenceTabDetails() throws InterruptedException
 {
+	logger=extent.startTest("ValidateEssenceTabDetails");
 	searchpage.ClickInformationModeIcon();
 	boolean b=searchpage.CheckEssenceTab();
 	Assert.assertTrue(b , "EssenceTab is not loading");
@@ -115,6 +122,7 @@ public void ValidateEssenceTabDetails() throws InterruptedException
 @Test(priority=8,enabled=false)
 public void ValidateOpsactionTab() throws InterruptedException
 {
+	logger=extent.startTest("ValidateOpsactionTab");
 	String ExpectedOpsactionTab="Mark as Delete (Invalid Asset will be hidden in Library)";
 	searchpage.ClickInformationModeIcon();
 	String OpsactionTabText=searchpage.CheckOpsactionTab();
@@ -124,6 +132,7 @@ public void ValidateOpsactionTab() throws InterruptedException
 @Test(priority=9, enabled=false)
 public void ValidateStreamingFromAssetDetailPopUp() throws InterruptedException
 {
+	logger=extent.startTest("ValidateStreamingFromAssetDetailPopUp");
 	searchpage.ClickInformationModeIcon();
 	boolean streaming_status=searchpage.streamingFromAssetDetailsPopUp();
 	Assert.assertTrue(streaming_status);
@@ -132,6 +141,7 @@ public void ValidateStreamingFromAssetDetailPopUp() throws InterruptedException
 @Test(priority=10 , enabled=false)
 public void ValidateCart_ErrorMsg_clickedOnEmptyCart()
 {
+	logger=extent.startTest("ValidateCart_ErrorMsg_clickedOnEmptyCart");
 	String AlertMessage=searchpage.ClickOnCartWhenCartCoun_IsZeroAndCaptureAlertMessage();
 	Assert.assertTrue(AlertMessage.contains("Select at least one asset"));
 }
@@ -139,6 +149,7 @@ public void ValidateCart_ErrorMsg_clickedOnEmptyCart()
 @Test(priority=11 , enabled=false)
 public void ValidateCartPageIsDisplaying()
 {
+	logger=extent.startTest("ValidateCartPageIsDisplaying");
 	boolean CartPage=searchpage.AddAssetsToCart();
 	Assert.assertTrue(CartPage , "cart page is not displaying");
 }
@@ -146,6 +157,7 @@ public void ValidateCartPageIsDisplaying()
 @Test(priority=12 ,enabled = false)
 public void ValidateCartCount_WithAssetsAdded()
 {
+	logger=extent.startTest("ValidateCartCount_WithAssetsAdded");
 	searchpage.AddAssetsToCart();
 	int Cart_count=searchpage.GetAssetsCountInCart();
 	Assert.assertEquals(Cart_count, 4 ,"Assets added count is not matching with Cart Count");
@@ -155,6 +167,7 @@ public void ValidateCartCount_WithAssetsAdded()
 @Test(priority=13,enabled=false)
 public void ValidateFilterOptionsInSearchLibrary() throws InterruptedException
 {
+	logger=extent.startTest("ValidateFilterOptionsInSearchLibrary");
 	int Total_filters=searchpage.GetFilterOptionsCount();
 	Assert.assertEquals(Total_filters, 9 , "All the filter options are not displaying");
 }
@@ -162,6 +175,7 @@ public void ValidateFilterOptionsInSearchLibrary() throws InterruptedException
 @Test(priority=14 , enabled=false)
 public void ValidateContentsCount() throws InterruptedException
 {
+	logger=extent.startTest("ValidateContentsCount");
 	String FilterResult=searchpage.ApplyFilter();
 	Assert.assertTrue(FilterResult.contains("Results"));
 }
@@ -169,6 +183,7 @@ public void ValidateContentsCount() throws InterruptedException
 @Test(priority=15,enabled=false)
 public void ValidateSortOptionsIsDisplaying()
 {
+	logger=extent.startTest("ValidateSortOptionsIsDisplaying");
 	boolean Sort_option =searchpage.CheckSortOptionInLibrary();
 	Assert.assertTrue(Sort_option);
 }
@@ -176,6 +191,7 @@ public void ValidateSortOptionsIsDisplaying()
 @Test(priority=16 , enabled=false)
 public void ValidateSortOptionsInSearchLibrary()
 {
+	logger=extent.startTest("ValidateSortOptionsInSearchLibrary");
 	searchpage.CheckSortOptionInLibrary();
 	String SortOptions=searchpage.getSortOptions();
 	Assert.assertTrue(!SortOptions.isEmpty(), "Sort options are not displaying");
@@ -184,13 +200,15 @@ public void ValidateSortOptionsInSearchLibrary()
 @Test(priority=17)
 public void ValidateAssetsAreDisplayingInListView()
 {
+	logger=extent.startTest("ValidateAssetsAreDisplayingInListView");
 	boolean List_view=searchpage.CheckListView();
 	Assert.assertTrue(List_view);
 }
 
-@Test
+@Test(priority=18)
 public void ValidateAssetsAreDisplayingInGridView()
 {
+	logger=extent.startTest("ValidateAssetsAreDisplayingInGridView");
 	boolean Grid_view=searchpage.gridViewIsDisplaying();
 	Assert.assertTrue(Grid_view);
 }

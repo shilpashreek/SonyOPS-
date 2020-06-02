@@ -46,6 +46,7 @@ public class OpsPageTest extends BaseClass
 	@Test(priority=1 , enabled=true)
 	public void ValidateDefaultLandingPage_ForOpsRoleIsShows()
 	{
+		logger=extent.startTest("ValidateDefaultLandingPage_ForOpsRoleIsShows");
 		boolean showsLabel=opspage.GetThelandingPageLabel();
 		Assert.assertTrue(showsLabel, "Shows page is not displaying");
 	}
@@ -53,6 +54,7 @@ public class OpsPageTest extends BaseClass
 	@Test(priority=2 , enabled=true)
 	public void ValidatePaginationControlsLoading()
 	{
+		logger=extent.startTest("ValidatePaginationControlsLoading");
 		boolean PaginationIconPresent=opspage.checkPageIcon();
 		Assert.assertTrue(PaginationIconPresent);
 	}
@@ -60,6 +62,7 @@ public class OpsPageTest extends BaseClass
 	@Test(priority=3, enabled=true)
 	public void ValidateDashboardIsLoading()        //if columns are present obviously DashboarD will be loading
 	{
+		logger=extent.startTest("ValidateDashboardIsLoading");
 		List<String> original_col_list = opspage.getColumnsCountAndName();
 		List<String> Expected_col_list = opspage.TargetColumnList();
 		Assert.assertEquals(original_col_list, Expected_col_list , "Columns are not matching with expected columns");
@@ -68,6 +71,7 @@ public class OpsPageTest extends BaseClass
 	@Test(priority=4 ,enabled=true)
 	public void ValidateFilterPopUpIsDisplayed()
 	{
+		logger=extent.startTest("ValidateFilterPopUpIsDisplayed");
 		boolean filter_status=opspage.ClickOnfilterIcon();
 		Assert.assertTrue(filter_status , "Filter popUp is not displaying");
 	}
@@ -75,6 +79,7 @@ public class OpsPageTest extends BaseClass
 	@Test(priority=5 , enabled = true)
 	public void ValidateAllFilterOptionsAreDisplayingInFilterPopUp()
 	{
+		logger=extent.startTest("ValidateAllFilterOptionsAreDisplayingInFilterPopUp");
 		opspage.ClickOnfilterIcon();
 		opspage.getAllFilterOptions();
 	}
@@ -82,6 +87,7 @@ public class OpsPageTest extends BaseClass
 	@Test(priority=6,enabled=true)
 	public void ValidateSearchResetFunctionality()
 	{
+		logger=extent.startTest("ValidateSearchResetFunctionality");
 		boolean Page_refreshing=opspage.SearchResetFunctionality();
 		Assert.assertTrue(Page_refreshing);
 	}
