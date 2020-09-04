@@ -3,17 +3,16 @@
 <suite name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="com.qa.sonyops.testcases.SubtitlePageTest">
+      <class name="com.qa.sonyops.testcases.LoginPageCETest">
         <methods>
-          <include name="tearDown"/>
           <include name="LoadChromeDataToTempFolder"/>
           <include name="DeleteTemporaryFolder"/>
-          <include name="ValidateSubtitleStatusFilter"/>
-          <include name="setup"/>
-          <include name="ValiadteEssenceUpload"/>
+          <include name="tearDown"/>
+          <include name="ValidateLoginToCEportal" invocation-numbers="0 1"/>
+          <include name="initialization"/>
           <include name="endReport"/>
         </methods>
-      </class> <!-- com.qa.sonyops.testcases.SubtitlePageTest -->
+      </class> <!-- com.qa.sonyops.testcases.LoginPageCETest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

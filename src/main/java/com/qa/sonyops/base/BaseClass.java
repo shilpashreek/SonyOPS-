@@ -10,6 +10,7 @@ import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.log4j.Logger;
+import org.apache.log4j.xml.DOMConfigurator;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeDriverService;
@@ -75,6 +76,10 @@ public static ExtentTest logger;
 		  DestFolder.mkdir(); FileUtils.copyDirectory(SrcFolder, DestFolder); 
 		 }
 	  
+	  //loading log4j.properties file
+	  DOMConfigurator.configure("C:\\Users\\Manjushree\\Documents\\SonyOPS-\\src\\main\\resources\\log4j.properties");
+	  log=Logger.getLogger(this.getClass().getName());
+	  //Logger.getLogger(BaseClass.class.getName());
 	  }
 	 
      
@@ -127,7 +132,7 @@ public static ExtentTest logger;
     	e_driver.register(eventlistener);
     	driver=e_driver;  //assign EventFiringWebDriver to our main driver
     	
-    	log = Logger.getLogger(this.getClass().getName());
+    	//log = Logger.getLogger(this.getClass().getName());
     	
         driver.manage().window().maximize();
         driver.manage().deleteAllCookies();

@@ -31,22 +31,46 @@ div.shootout {padding:2em;border:3px #4854A8 solid}
 <body>
 <table cellspacing="0" cellpadding="0" class="result">
 <tr><th>Test</th><th class="numi">Methods<br/>Passed</th><th class="numi">Scenarios<br/>Passed</th><th class="numi"># skipped</th><th class="numi"># failed</th><th class="numi">Total<br/>Time</th><th class="numi">Included<br/>Groups</th><th class="numi">Excluded<br/>Groups</th></tr>
-<tr><td style="text-align:left;padding-right:2em">Default test</td><td class="numi">5</td><td class="numi">5</td><td class="numi">0</td><td class="numi">0</td><td class="numi">262.3 seconds</td><td class="numi"></td><td class="numi"></td></tr>
+<tr><td style="text-align:left;padding-right:2em">Default test</td><td class="numi">0</td><td class="numi">0</td><td class="numi">0</td><td class="numi_attn">2</td><td class="numi">160.6 seconds</td><td class="numi"></td><td class="numi"></td></tr>
 </table>
 <table cellspacing="0" cellpadding="0" class="passed" id="summary">
 <tr><th>Class</th><th>Method</th><th># of<br/>Scenarios</th><th>Start</th><th>Time<br/>(ms)</th></tr>
-<tr><th colspan="4">Default test &#8212; passed</th></tr>
-<tr class="passedodd"><td rowspan="5">com.qa.sonyops.testcases.SmarttaskerPageTest</td><td><a href="#m1"><b>ValidateSmartTaskerDashboardIsDisplaying</b>  </a></td><td class="numi">1</td><td>1591077087385</td><td class="numi">115</td></tr><tr class="passedodd"><td><a href="#m2"><b>ValidateEnteriesUnderProcessTab</b>  ("Verify that enteries are loading under process tab")</a></td><td class="numi">1</td><td>1591077122450</td><td class="numi">69</td></tr><tr class="passedodd"><td><a href="#m3"><b>ValidateCheckBoxStatus</b>  ("Verify the status of the checkboxes in processTemplate dropdown")</a></td><td class="numi">1</td><td>1591077155989</td><td class="numi">3721</td></tr><tr class="passedodd"><td><a href="#m4"><b>Validate_Go_buttonFunctionality</b>  ("Verify Go button in processTemplates dropdown functionality")</a></td><td class="numi">1</td><td>1591077189604</td><td class="numi">64655</td></tr><tr class="passedodd"><td><a href="#m5"><b>ValidateVariationInExecutionGraph</b>  ("Smart Tasker - Execution Trend panel-Verify the N level drill down in execution trends")</a></td><td class="numi">1</td><td>1591077286310</td><td class="numi">11622</td></tr>
+<tr><th colspan="4">Default test &#8212; failed</th></tr>
+<tr class="failedodd"><td rowspan="2">com.qa.sonyops.testcases.LoginPageCETest</td><td><a href="#m1"><b>ValidateLoginToCEportal</b>  </a></td><td class="numi">2</td><td>1596720174042</td><td class="numi">79482</td></tr><tr class="failedodd"><td><a href="#m2"><b>ValidateLoginToCEportal</b>  </a></td><td class="numi">2</td><td>1596720174042</td><td class="numi">79482</td></tr>
 </table>
 <h1>Default test</h1>
-<h2 id="m1">com.qa.sonyops.testcases.SmarttaskerPageTest:ValidateEnteriesUnderProcessTab</h2>
+<h2 id="m1">com.qa.sonyops.testcases.LoginPageCETest:ValidateLoginToCEportal</h2>
+<table cellspacing="0" cellpadding="0" class="result">
+<tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr>
+<tr class="param stripe"><td>shilpa.sonyops</td>
+<td>March@2020</td>
+</tr>
+<tr><td style="padding-left:3em" colspan="2">
+<p>Home page is not displayed expected [SonyOPS Clear EDGE] but found [Clear EDGE]</p>
+org.testng.Assert.fail(Assert.java:94)
+<br/>at org.testng.Assert.failNotEquals(Assert.java:494)
+<br/>at org.testng.Assert.assertEquals(Assert.java:123)
+<br/>at org.testng.Assert.assertEquals(Assert.java:176)
+<br/>at com.qa.sonyops.testcases.LoginPageCETest.ValidateLoginToCEportal(LoginPageCETest.java:75)
+<br/>25 lines not shown
+</td></tr>
+</table>
 <p class="totop"><a href="#summary">back to summary</a></p>
-<h2 id="m2">com.qa.sonyops.testcases.SmarttaskerPageTest:ValidateSmartTaskerDashboardIsDisplaying</h2>
-<p class="totop"><a href="#summary">back to summary</a></p>
-<h2 id="m3">com.qa.sonyops.testcases.SmarttaskerPageTest:ValidateCheckBoxStatus</h2>
-<p class="totop"><a href="#summary">back to summary</a></p>
-<h2 id="m4">com.qa.sonyops.testcases.SmarttaskerPageTest:Validate_Go_buttonFunctionality</h2>
-<p class="totop"><a href="#summary">back to summary</a></p>
-<h2 id="m5">com.qa.sonyops.testcases.SmarttaskerPageTest:ValidateVariationInExecutionGraph</h2>
+<h2 id="m2">com.qa.sonyops.testcases.LoginPageCETest:ValidateLoginToCEportal</h2>
+<table cellspacing="0" cellpadding="0" class="result">
+<tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr>
+<tr class="param stripe"><td>shilpa.sonyops</td>
+<td>shilpa</td>
+</tr>
+<tr><td style="padding-left:3em" colspan="2">
+<p>Home page is not displayed expected [SonyOPS Clear EDGE] but found [Clear EDGE]</p>
+org.testng.Assert.fail(Assert.java:94)
+<br/>at org.testng.Assert.failNotEquals(Assert.java:494)
+<br/>at org.testng.Assert.assertEquals(Assert.java:123)
+<br/>at org.testng.Assert.assertEquals(Assert.java:176)
+<br/>at com.qa.sonyops.testcases.LoginPageCETest.ValidateLoginToCEportal(LoginPageCETest.java:75)
+<br/>25 lines not shown
+</td></tr>
+</table>
 <p class="totop"><a href="#summary">back to summary</a></p>
 </body></html>

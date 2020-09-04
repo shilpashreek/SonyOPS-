@@ -20,6 +20,7 @@ public class SmarttaskerPageTest extends BaseClass
 	HomePage homepage;
 	OpsPage opspage;
 	SmarttaskerPage smarttasker;
+	
    public SmarttaskerPageTest()
    {
 	   super();
@@ -45,7 +46,7 @@ public class SmarttaskerPageTest extends BaseClass
    @Test(priority=1 ,enabled=true)
    public void ValidateSmartTaskerDashboardIsDisplaying()
    {
-	   logger=extent.startTest("ValidateSmartTaskerDashboardIsDisplaying");
+	  logger=extent.startTest("ValidateSmartTaskerDashboardIsDisplaying");
 	  boolean SmartTasker_status=smarttasker.CheckSmartTaskerDashboardIsLoading();
 	  Assert.assertTrue(SmartTasker_status , "Smarttasker Dashboard is not loading");
    }

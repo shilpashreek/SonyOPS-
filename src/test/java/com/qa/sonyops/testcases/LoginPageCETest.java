@@ -1,7 +1,5 @@
 package com.qa.sonyops.testcases;
 
-import java.io.IOException;
-
 import org.testng.Assert;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
@@ -15,7 +13,6 @@ import com.qa.sonyops.pages.HomePageCE;
 import com.qa.sonyops.pages.LoginPageCE;
 import com.qa.sonyops.util.TestNGListeners;
 import com.qa.sonyops.util.TestUtil;
-import com.relevantcodes.extentreports.LogStatus;
 
 @Listeners(TestNGListeners.class)
 public class LoginPageCETest extends BaseClass
@@ -41,7 +38,7 @@ public void initialization()
 	
 }
 
-@Test(priority=0 , enabled=true)
+@Test(priority=0 , enabled=false)
 public void ValidateClearLogoisDisplayedinLoginPage()
 {
 	logger= extent.startTest("ValidateClearLogoisDisplayedinLoginPage");
@@ -51,7 +48,7 @@ public void ValidateClearLogoisDisplayedinLoginPage()
 	Assert.assertTrue(true);
 }
 
-@Test(priority=1 , enabled=true)
+@Test(priority=1 , enabled=false)
 public void ValidateLoginPageTitle()
 {
 	logger= extent.startTest("ValidateLoginPageTitle");
@@ -78,7 +75,7 @@ public void ValidateLoginToCEportal(String username , String password)
 	Assert.assertEquals(homepagetile, "SonyOPS Clear EDGE", "Home page is not displayed");
 }
 
-@Test(priority=3 , enabled=true)
+@Test(priority=3 , enabled=false)
 public void ValidateCopyRightTextOnLoginPage()
 {
 	logger= extent.startTest("ValidateCopyRightTextOnLoginPage");
@@ -87,7 +84,7 @@ public void ValidateCopyRightTextOnLoginPage()
 	//logger.pass("pass");
 }
 
-@Test(priority=4 , enabled=true)
+@Test(priority=4 , enabled=false)
 public void ValidateLinksOnLoginPage()
 {
 	//logger=report.createTest("clear links");
