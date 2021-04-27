@@ -275,14 +275,14 @@ WebElement UploadBtn_EssenceTab;
         Thread.sleep(2000);
     	TestUtil.Click(driver, 20, Essence_browseBtn);
     	Thread.sleep(10000);
-    	Runtime.getRuntime().exec("C:\\Users\\Manjushree\\Documents\\SonyOPS-\\AutoITscripts\\EssenceUpload.exe");
+    	Runtime.getRuntime().exec("D:\\automationPULLprojects\\SonyOPS-\\AutoITscripts\\EssenceUpload.exe");
     	WebElement Essence_Format=driver.findElement(By.xpath("//select[@class='essFormatDropDown']"));
     	testutil.HandlingDropDown(Essence_Format, "SRT");
     	Thread.sleep(3000);
     	TestUtil.Click(driver, 20, UploadBtn_EssenceTab);
     	Thread.sleep(4000);
     	//Runtime.getRuntime().exec("C:\\Users\\Manjushree\\Documents\\SonyOPS-\\AutoITscripts\\DenyAsperaConnect.exe");
-    	Runtime.getRuntime().exec("C:\\Users\\Manjushree\\Documents\\SonyOPS-\\AutoITscripts\\AllowAsperaConnections.exe");
+    	Runtime.getRuntime().exec("D:\\automationPULLprojects\\SonyOPS-\\AutoITscripts\\AllowAsperaConnections.exe");
     	try {
     	System.out.println(Alert.getText());
     	return Alert.getText();

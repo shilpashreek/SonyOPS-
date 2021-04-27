@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="SonyOps tenant Automated Test Cases">
+
+<listeners>
+<listener  class-name= "com.qa.sonyops.util.TestNGListeners"/>
+<listener  class-name= "com.qa.sonyops.ExtentReportListener.ExtentReporterNG"/>
+</listeners>
+
+
+<parameter name="ce_url1" value="https://sonyops.clearhub.tv/CE/Product/Modules/SignIn.aspx"/>
+<parameter name="bc_url1" value="https://sonyops.clearhub.tv/BC/Product/Modules/SignIn.aspx"/>
+<parameter name="url1" value="https://www.google.com/"/>
+<parameter name="username1" value="shilpa.sonyops"/>
+<parameter name="password1" value="Corona@2020"/>
+<parameter name="browser1" value="chrome"/>
+<parameter name="Flash_url1" value="chrome://settings/content/siteDetails?site=https://sonyops.clearhub.tv/BC/Product/Modules/SignIn.aspx"/>
+
+<test name="SonyOps Test cases" parallel="none" preserve-order="true" group-by-instances="true">
+     <classes>
+         <class name= "com.qa.sonyops.testcases.LoginPageCETest">  
+             <methods>
+               <include name = "ValidateLoginToCEportal"/>
+            </methods>
+         </class>
+         <!-- <class name= "com.qa.sonyops.testcases.HomePageCETest"> 
+            <methods>
+               <include name="ValidateHomePage_isDisplayed"/>
+               <include name="ValidateColumnsinHomePage"/>
+               <include name="ValidateTransferHistoryEntries"/>
+               <include name="ValidateUploadDetailsPopup"/>
+               <include name="ValidateLogoutFromCEportal"/>
+               <include name="ValidateSearchResult_ForInvalidData"/>
+               <include name="ValidateLogoutFromCEportal"/>
+           </methods>
+         </class>
+         <class name= "com.qa.sonyops.testcases.LoginPageTest">  
+           <methods>
+              <include name="ValidateLoginForValidAndInvalidData"/>
+           </methods>
+         </class> -->
+         <!--<class name= "com.qa.sonyops.testcases.HomePageTest">  </class>
+         <class name= "com.qa.sonyops.testcases.CatalogPageTest">  </class>
+         <class name= "com.qa.sonyops.testcases.CatalogPlayerPageTest">  </class>
+         <class name= "com.qa.sonyops.testcases.CatalogManagerPageTest">  </class>
+         <class name= "com.qa.sonyops.testcases.SearchLibraryPageTest">  </class>
+         <class name= "com.qa.sonyops.testcases.SubtitlePageTest">  </class>
+         <class name= "com.qa.sonyops.testcases.OpsPageTest">  </class>
+         <class name= "com.qa.sonyops.testcases.SmarttaskerPageTest">  </class> -->         
+    </classes>
+  </test> 
+</suite>

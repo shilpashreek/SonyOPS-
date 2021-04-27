@@ -1,0 +1,32 @@
+2021-04-23 15:15:52,600 INFO  SearchLibraryPageTest:36 - *****************Starting testcase execution*****************
+2021-04-23 15:16:13,667 INFO  SearchLibraryPageTest:36 - *****************Starting testcase execution*****************
+2021-04-23 15:21:34,422 INFO  SearchLibraryPageTest:36 - *****************Starting testcase execution*****************
+2021-04-23 15:21:48,924 INFO  SearchLibraryPageTest:36 - *****************Starting testcase execution*****************
+2021-04-23 15:22:03,766 INFO  SearchLibraryPageTest:36 - *****************Starting testcase execution*****************
+2021-04-23 15:22:20,328 INFO  SearchLibraryPageTest:36 - *****************Starting testcase execution*****************
+2021-04-23 15:22:37,592 INFO  SearchLibraryPageTest:36 - *****************Starting testcase execution*****************
+2021-04-23 15:22:58,160 INFO  SearchLibraryPageTest:36 - *****************Starting testcase execution*****************
+2021-04-23 15:23:14,874 INFO  SearchLibraryPageTest:36 - *****************Starting testcase execution*****************
+2021-04-23 15:28:32,863 INFO  SearchLibraryPageTest:36 - *****************Starting testcase execution*****************
+2021-04-23 15:28:47,513 INFO  SearchLibraryPageTest:36 - *****************Starting testcase execution*****************
+2021-04-23 15:29:02,039 INFO  SearchLibraryPageTest:36 - *****************Starting testcase execution*****************
+2021-04-23 15:29:19,495 INFO  SearchLibraryPageTest:36 - *****************Starting testcase execution*****************
+2021-04-23 15:29:38,445 INFO  SearchLibraryPageTest:36 - *****************Starting testcase execution*****************
+2021-04-23 15:29:52,417 INFO  SearchLibraryPageTest:36 - *****************Starting testcase execution*****************
+2021-04-23 15:30:07,464 INFO  SearchLibraryPageTest:36 - *****************Starting testcase execution*****************
+2021-04-23 15:30:22,368 INFO  SearchLibraryPageTest:36 - *****************Starting testcase execution*****************
+2021-04-23 15:30:36,860 DEBUG cache:45 - Couldn't find template in cache for "Extent.ftl"("en_US", UTF-8, parsed); will try to load it.
+2021-04-23 15:30:36,863 DEBUG cache:45 - TemplateLoader.findTemplateSource("Extent_en_US.ftl"): Not found
+2021-04-23 15:30:36,865 DEBUG cache:45 - TemplateLoader.findTemplateSource("Extent_en.ftl"): Not found
+2021-04-23 15:30:36,866 DEBUG cache:45 - TemplateLoader.findTemplateSource("Extent.ftl"): Found
+2021-04-23 15:30:36,866 DEBUG cache:45 - Loading template for "Extent.ftl"("en_US", UTF-8, parsed) from "jar:file:/C:/Users/shilpashree.k/.m2/repository/com/relevantcodes/extentreports/2.41.2/extentreports-2.41.2.jar!/com/relevantcodes/extentreports/view/Extent.ftl"
+2021-04-23 15:30:37,332 DEBUG cache:45 - Couldn't find template in cache for "Extent.ftl"("en_US", UTF-8, parsed); will try to load it.
+2021-04-23 15:30:37,333 DEBUG cache:45 - TemplateLoader.findTemplateSource("Extent_en_US.ftl"): Not found
+2021-04-23 15:30:37,333 DEBUG cache:45 - TemplateLoader.findTemplateSource("Extent_en.ftl"): Not found
+2021-04-23 15:30:37,334 DEBUG cache:45 - TemplateLoader.findTemplateSource("Extent.ftl"): Found
+2021-04-23 15:30:37,334 DEBUG cache:45 - Loading template for "Extent.ftl"("en_US", UTF-8, parsed) from "jar:file:/C:/Users/shilpashree.k/.m2/repository/com/relevantcodes/extentreports/2.41.2/extentreports-2.41.2.jar!/com/relevantcodes/extentreports/view/Extent.ftl"
+2021-04-23 15:30:37,442 DEBUG cache:45 - Couldn't find template in cache for "Extent.ftl"("en_US", UTF-8, parsed); will try to load it.
+2021-04-23 15:30:37,442 DEBUG cache:45 - TemplateLoader.findTemplateSource("Extent_en_US.ftl"): Not found
+2021-04-23 15:30:37,443 DEBUG cache:45 - TemplateLoader.findTemplateSource("Extent_en.ftl"): Not found
+2021-04-23 15:30:37,443 DEBUG cache:45 - TemplateLoader.findTemplateSource("Extent.ftl"): Found
+2021-04-23 15:30:37,443 DEBUG cache:45 - Loading template for "Extent.ftl"("en_US", UTF-8, parsed) from "jar:file:/C:/Users/shilpashree.k/.m2/repository/com/relevantcodes/extentreports/2.41.2/extentreports-2.41.2.jar!/com/relevantcodes/extentreports/view/Extent.ftl"

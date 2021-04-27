@@ -1,18 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [Default suite]">
-  <test name="Default test(failed)">
+<suite name="Failed suite [SonyOps tenant Automated Test Cases]" guice-stage="DEVELOPMENT">
+  <parameter name="bc_url1" value="https://192.168.19.33/BC/Product/Modules/SignIn.aspx?sonyops.clearhub.tv"/>
+  <parameter name="url1" value="https://www.google.com/"/>
+  <parameter name="ce_url1" value="https://192.168.19.33/CE/Product/Modules/SignIn.aspx?sonyops.clearhub.tv"/>
+  <parameter name="password1" value="killerK@1@"/>
+  <parameter name="username1" value="sonyops.preprod"/>
+  <parameter name="Flash_url1" value="chrome://settings/content/siteDetails?site=https://sonyops.clearhub.tv/BC/Product/Modules/SignIn.aspx"/>
+  <parameter name="browser1" value="chrome"/>
+  <listeners>
+    <listener class-name="com.qa.sonyops.util.TestNGListeners"/>
+    <listener class-name="com.qa.sonyops.ExtentReportListener.ExtentReporterNG"/>
+  </listeners>
+  <test name="SonyOps Test cases(failed)">
     <classes>
-      <class name="com.qa.sonyops.testcases.LoginPageCETest">
+      <class name="com.qa.sonyops.testcases.SearchLibraryPageTest">
         <methods>
+          <include name="ValidateStandalonePlayerIsStreaming"/>
           <include name="LoadChromeDataToTempFolder"/>
           <include name="DeleteTemporaryFolder"/>
           <include name="tearDown"/>
-          <include name="ValidateLoginToCEportal" invocation-numbers="0 1"/>
-          <include name="initialization"/>
+          <include name="SetUp"/>
+          <include name="ValidateStreamingFromAssetDetailPopUp"/>
+          <include name="ValidateAuditTrialTabDetails"/>
           <include name="endReport"/>
+          <include name="ValidateFilterOptionsInSearchLibrary"/>
         </methods>
-      </class> <!-- com.qa.sonyops.testcases.LoginPageCETest -->
+      </class> <!-- com.qa.sonyops.testcases.SearchLibraryPageTest -->
     </classes>
-  </test> <!-- Default test(failed) -->
-</suite> <!-- Failed suite [Default suite] -->
+  </test> <!-- SonyOps Test cases(failed) -->
+</suite> <!-- Failed suite [SonyOps tenant Automated Test Cases] -->

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="SonyOps tenant Automated Test Cases">
+
+<listeners>
+<listener  class-name= "com.qa.sonyops.util.TestNGListeners"/>
+<listener  class-name= "com.qa.sonyops.ExtentReportListener.ExtentReporterNG"/>
+</listeners>
+
+
+<parameter name="ce_url1" value="https://192.168.19.33/CE/Product/Modules/SignIn.aspx?sonyops.clearhub.tv"/>
+<parameter name="bc_url1" value="https://192.168.19.33/BC/Product/Modules/SignIn.aspx?sonyops.clearhub.tv"/>
+<parameter name="url1" value="https://www.google.com/"/>
+<parameter name="username1" value="sonyops.preprod"/>
+<parameter name="password1" value="killerK@1@"/>
+<parameter name="browser1" value="chrome"/>
+<parameter name="Flash_url1" value="chrome://settings/content/siteDetails?site=https://sonyops.clearhub.tv/BC/Product/Modules/SignIn.aspx"/>
+
+<test name="SonyOps Test cases" parallel="none" preserve-order="true" > <!-- //group-by-instances="true" -->
+    <!-- <packages>
+     <package name="com.qa.sonyops.testcases"/>
+     </packages> -->
+     
+     <classes>
+     <class name="com.qa.sonyops.testcases.LoginPageCETest" />
+     <class name="com.qa.sonyops.testcases.HomePageCETest" />
+     <class name="com.qa.sonyops.testcases.LoginPageTest" />
+     <class name="com.qa.sonyops.testcases.HomePageTest" />
+     <class name="com.qa.sonyops.testcases.CatalogPageTest" />
+     <class name="com.qa.sonyops.testcases.CatalogPlayerPageTest" />
+     <class name="com.qa.sonyops.testcases.CatalogManagerPageTest" />
+     <class name="com.qa.sonyops.testcases.SearchLibraryPageTest" />
+     <class name="com.qa.sonyops.testcases.OpsPageTest" />
+     <class name="com.qa.sonyops.testcases.SmarttaskerPageTest" />
+     <class name="com.qa.sonyops.testcases.SubtitlePageTest" />
+     
+     
+     </classes>
+  </test> 
+</suite>
