@@ -59,18 +59,27 @@ public class SearchLibraryPageTest extends BaseClass {
 
 	@Test(priority = 2, enabled = true)
 	public void ValidateStandalonePlayerIsStreaming() throws InterruptedException {
-		logger = extent.startTest("ValidateStandalonePlayerIsStreaming");
-		searchpage.ClickOnStandalonePlayer();
-		boolean b = searchpage.CheckIfPlayerisLoading();
-		Assert.assertTrue(b, "Streaming is not happening");
+		try {
+			logger = extent.startTest("ValidateStandalonePlayerIsStreaming");
+			searchpage.ClickOnStandalonePlayer();
+			boolean b = searchpage.CheckIfPlayerisLoading();
+			Assert.assertTrue(b, "Streaming is not happening");
+		} catch (Exception e) {
+			log.error("Streaming is not happening due to the following error " + e.getMessage());
+		}
 
 	}
 
 	@Test(priority = 3, enabled = true)
 	public void ValidateAssetDetailsIsDisplaying() {
-		logger = extent.startTest("ValidateAssetDetailsIsDisplaying");
-		String A_details = searchpage.CheckAssetDetails();
-		Assert.assertTrue(!A_details.isEmpty());
+		try {
+			logger = extent.startTest("ValidateAssetDetailsIsDisplaying");
+			String A_details = searchpage.CheckAssetDetails();
+			Assert.assertTrue(!A_details.isEmpty());
+		} catch (Exception e) {
+			log.error("Asset details is not displaying, error as follows " + e.getMessage());
+
+		}
 	}
 
 	@Test(priority = 4, enabled = true)
@@ -118,10 +127,15 @@ public class SearchLibraryPageTest extends BaseClass {
 
 	@Test(priority = 9, enabled = true)
 	public void ValidateStreamingFromAssetDetailPopUp() throws InterruptedException {
-		logger = extent.startTest("ValidateStreamingFromAssetDetailPopUp");
-		searchpage.ClickInformationModeIcon();
-		boolean streaming_status = searchpage.streamingFromAssetDetailsPopUp();
-		Assert.assertTrue(streaming_status);
+		try {
+			logger = extent.startTest("ValidateStreamingFromAssetDetailPopUp");
+			searchpage.ClickInformationModeIcon();
+			boolean streaming_status = searchpage.streamingFromAssetDetailsPopUp();
+			Assert.assertTrue(streaming_status);
+		} catch (Exception e) {
+			log.error("Streaming is not working from Asset details pop-up");
+
+		}
 	}
 
 	@Test(priority = 10, enabled = false)

@@ -5,6 +5,7 @@
 <listeners>
 <listener  class-name= "com.qa.sonyops.util.TestNGListeners"/>
 <listener  class-name= "com.qa.sonyops.ExtentReportListener.ExtentReporterNG"/>
+<listener class-name="com.qa.sonyops.util.MyTransformer" />
 </listeners>
 
 
@@ -22,17 +23,17 @@
      </packages> -->
      
      <classes>
-     <!-- <class name="com.qa.sonyops.testcases.LoginPageCETest" />
+     <class name="com.qa.sonyops.testcases.LoginPageCETest" />
      <class name="com.qa.sonyops.testcases.HomePageCETest" />
      <class name="com.qa.sonyops.testcases.LoginPageTest" />
      <class name="com.qa.sonyops.testcases.HomePageTest" />
      <class name="com.qa.sonyops.testcases.CatalogPageTest" />
      <class name="com.qa.sonyops.testcases.CatalogPlayerPageTest" />
-     <class name="com.qa.sonyops.testcases.CatalogManagerPageTest" /> -->
+     <class name="com.qa.sonyops.testcases.CatalogManagerPageTest" />
      <class name="com.qa.sonyops.testcases.SearchLibraryPageTest" />
-     <!-- <class name="com.qa.sonyops.testcases.OpsPageTest" />
+     <class name="com.qa.sonyops.testcases.OpsPageTest" />
      <class name="com.qa.sonyops.testcases.SmarttaskerPageTest" />
-     <class name="com.qa.sonyops.testcases.SubtitlePageTest" /> -->
+     <class name="com.qa.sonyops.testcases.SubtitlePageTest" />
      
      
      </classes>

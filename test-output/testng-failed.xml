@@ -11,6 +11,7 @@
   <listeners>
     <listener class-name="com.qa.sonyops.util.TestNGListeners"/>
     <listener class-name="com.qa.sonyops.ExtentReportListener.ExtentReporterNG"/>
+    <listener class-name="com.qa.sonyops.util.MyTransformer"/>
   </listeners>
   <test name="SonyOps Test cases(failed)">
     <classes>
@@ -22,7 +23,6 @@
           <include name="tearDown"/>
           <include name="SetUp"/>
           <include name="ValidateStreamingFromAssetDetailPopUp"/>
-          <include name="ValidateAuditTrialTabDetails"/>
           <include name="endReport"/>
           <include name="ValidateFilterOptionsInSearchLibrary"/>
         </methods>

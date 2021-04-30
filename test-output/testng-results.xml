@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="1" total="18" passed="13" failed="4" skipped="0">
+<testng-results ignored="1" total="24" passed="14" failed="3" skipped="6">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2021-04-23T09:45:51Z" name="SonyOps tenant Automated Test Cases" finished-at="2021-04-23T10:00:37Z" duration-ms="885244">
+  <suite started-at="2021-04-27T12:58:34Z" name="SonyOps tenant Automated Test Cases" finished-at="2021-04-27T13:35:11Z" duration-ms="2197468">
     <groups>
     </groups>
-    <test started-at="2021-04-23T09:45:51Z" name="SonyOps Test cases" finished-at="2021-04-23T10:00:37Z" duration-ms="885244">
+    <test started-at="2021-04-27T12:58:34Z" name="SonyOps Test cases" finished-at="2021-04-27T13:35:11Z" duration-ms="2197468">
       <class name="com.qa.sonyops.testcases.SearchLibraryPageTest">
-        <test-method is-config="true" signature="LoadChromeDataToTempFolder(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.qa.sonyops.testcases.SearchLibraryPageTest@1ffaf86]" started-at="2021-04-23T15:15:51Z" name="LoadChromeDataToTempFolder" finished-at="2021-04-23T15:15:52Z" duration-ms="773" status="PASS">
+        <test-method is-config="true" signature="LoadChromeDataToTempFolder(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.qa.sonyops.testcases.SearchLibraryPageTest@20140db9]" started-at="2021-04-27T18:28:34Z" name="LoadChromeDataToTempFolder" finished-at="2021-04-27T18:28:35Z" duration-ms="730" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -48,23 +48,23 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- LoadChromeDataToTempFolder -->
-        <test-method is-config="true" signature="SetUp()[pri:0, instance:com.qa.sonyops.testcases.SearchLibraryPageTest@1ffaf86]" started-at="2021-04-23T15:15:52Z" name="SetUp" finished-at="2021-04-23T15:16:06Z" duration-ms="13575" status="PASS">
+        <test-method is-config="true" signature="SetUp()[pri:0, instance:com.qa.sonyops.testcases.SearchLibraryPageTest@20140db9]" started-at="2021-04-27T18:28:35Z" name="SetUp" finished-at="2021-04-27T18:29:06Z" duration-ms="31615" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- SetUp -->
-        <test-method signature="ValidateStandalonePlayerIsDisplaying()[pri:1, instance:com.qa.sonyops.testcases.SearchLibraryPageTest@1ffaf86]" started-at="2021-04-23T15:16:06Z" name="ValidateStandalonePlayerIsDisplaying" finished-at="2021-04-23T15:16:12Z" duration-ms="5956" status="PASS">
+        <test-method signature="ValidateStandalonePlayerIsDisplaying()[pri:1, instance:com.qa.sonyops.testcases.SearchLibraryPageTest@20140db9]" started-at="2021-04-27T18:29:06Z" name="ValidateStandalonePlayerIsDisplaying" finished-at="2021-04-27T18:29:09Z" duration-ms="3083" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ValidateStandalonePlayerIsDisplaying -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.qa.sonyops.testcases.SearchLibraryPageTest@1ffaf86]" started-at="2021-04-23T15:16:12Z" name="tearDown" finished-at="2021-04-23T15:16:13Z" duration-ms="784" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.qa.sonyops.testcases.SearchLibraryPageTest@20140db9]" started-at="2021-04-27T18:29:10Z" name="tearDown" finished-at="2021-04-27T18:29:10Z" duration-ms="757" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="SetUp()[pri:0, instance:com.qa.sonyops.testcases.SearchLibraryPageTest@1ffaf86]" started-at="2021-04-23T15:16:13Z" name="SetUp" finished-at="2021-04-23T15:16:27Z" duration-ms="14213" status="PASS">
+        <test-method is-config="true" signature="SetUp()[pri:0, instance:com.qa.sonyops.testcases.SearchLibraryPageTest@20140db9]" started-at="2021-04-27T18:29:10Z" name="SetUp" finished-at="2021-04-27T18:29:22Z" duration-ms="11802" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- SetUp -->
-        <test-method signature="ValidateStandalonePlayerIsStreaming()[pri:2, instance:com.qa.sonyops.testcases.SearchLibraryPageTest@1ffaf86]" started-at="2021-04-23T15:16:27Z" name="ValidateStandalonePlayerIsStreaming" finished-at="2021-04-23T15:21:32Z" duration-ms="305110" status="FAIL">
+        <test-method signature="ValidateStandalonePlayerIsStreaming()[pri:2, instance:com.qa.sonyops.testcases.SearchLibraryPageTest@20140db9]" started-at="2021-04-27T18:29:22Z" name="ValidateStandalonePlayerIsStreaming" finished-at="2021-04-27T18:34:26Z" duration-ms="303941" status="SKIP">
           <exception class="java.lang.AssertionError">
             <message>
               <![CDATA[Streaming is not happening expected [true] but found [false]]]>
@@ -74,7 +74,7 @@
 	at org.testng.Assert.fail(Assert.java:94)
 	at org.testng.Assert.failNotEquals(Assert.java:513)
 	at org.testng.Assert.assertTrue(Assert.java:42)
-	at com.qa.sonyops.testcases.SearchLibraryPageTest.ValidateStandalonePlayerIsStreaming(SearchLibraryPageTest.java:65)
+	at com.qa.sonyops.testcases.SearchLibraryPageTest.ValidateStandalonePlayerIsStreaming(SearchLibraryPageTest.java:66)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -106,70 +106,33 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ValidateStandalonePlayerIsStreaming -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.qa.sonyops.testcases.SearchLibraryPageTest@1ffaf86]" started-at="2021-04-23T15:21:33Z" name="tearDown" finished-at="2021-04-23T15:21:34Z" duration-ms="786" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.qa.sonyops.testcases.SearchLibraryPageTest@20140db9]" started-at="2021-04-27T18:34:26Z" name="tearDown" finished-at="2021-04-27T18:34:27Z" duration-ms="1091" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="SetUp()[pri:0, instance:com.qa.sonyops.testcases.SearchLibraryPageTest@1ffaf86]" started-at="2021-04-23T15:21:34Z" name="SetUp" finished-at="2021-04-23T15:21:47Z" duration-ms="12931" status="PASS">
+        <test-method is-config="true" signature="SetUp()[pri:0, instance:com.qa.sonyops.testcases.SearchLibraryPageTest@20140db9]" started-at="2021-04-27T18:34:27Z" name="SetUp" finished-at="2021-04-27T18:34:41Z" duration-ms="13620" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- SetUp -->
-        <test-method signature="ValidateAssetDetailsIsDisplaying()[pri:3, instance:com.qa.sonyops.testcases.SearchLibraryPageTest@1ffaf86]" started-at="2021-04-23T15:21:47Z" name="ValidateAssetDetailsIsDisplaying" finished-at="2021-04-23T15:21:47Z" duration-ms="98" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- ValidateAssetDetailsIsDisplaying -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.qa.sonyops.testcases.SearchLibraryPageTest@1ffaf86]" started-at="2021-04-23T15:21:48Z" name="tearDown" finished-at="2021-04-23T15:21:48Z" duration-ms="789" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="SetUp()[pri:0, instance:com.qa.sonyops.testcases.SearchLibraryPageTest@1ffaf86]" started-at="2021-04-23T15:21:48Z" name="SetUp" finished-at="2021-04-23T15:22:01Z" duration-ms="12421" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- SetUp -->
-        <test-method signature="ValidateInformationModeIsDiaplaying()[pri:4, instance:com.qa.sonyops.testcases.SearchLibraryPageTest@1ffaf86]" started-at="2021-04-23T15:22:01Z" name="ValidateInformationModeIsDiaplaying" finished-at="2021-04-23T15:22:02Z" duration-ms="905" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- ValidateInformationModeIsDiaplaying -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.qa.sonyops.testcases.SearchLibraryPageTest@1ffaf86]" started-at="2021-04-23T15:22:02Z" name="tearDown" finished-at="2021-04-23T15:22:03Z" duration-ms="823" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="SetUp()[pri:0, instance:com.qa.sonyops.testcases.SearchLibraryPageTest@1ffaf86]" started-at="2021-04-23T15:22:03Z" name="SetUp" finished-at="2021-04-23T15:22:16Z" duration-ms="12302" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- SetUp -->
-        <test-method signature="ValidateMetaDataInAssetDetailsPopUp()[pri:5, instance:com.qa.sonyops.testcases.SearchLibraryPageTest@1ffaf86]" started-at="2021-04-23T15:22:16Z" name="ValidateMetaDataInAssetDetailsPopUp" finished-at="2021-04-23T15:22:18Z" duration-ms="2764" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- ValidateMetaDataInAssetDetailsPopUp -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.qa.sonyops.testcases.SearchLibraryPageTest@1ffaf86]" started-at="2021-04-23T15:22:19Z" name="tearDown" finished-at="2021-04-23T15:22:20Z" duration-ms="835" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="SetUp()[pri:0, instance:com.qa.sonyops.testcases.SearchLibraryPageTest@1ffaf86]" started-at="2021-04-23T15:22:20Z" name="SetUp" finished-at="2021-04-23T15:22:32Z" duration-ms="12124" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- SetUp -->
-        <test-method signature="ValidateAuditTrialTabDetails()[pri:6, instance:com.qa.sonyops.testcases.SearchLibraryPageTest@1ffaf86]" started-at="2021-04-23T15:22:32Z" name="ValidateAuditTrialTabDetails" finished-at="2021-04-23T15:22:36Z" duration-ms="3703" status="FAIL">
+        <test-method signature="ValidateStandalonePlayerIsStreaming()[pri:2, instance:com.qa.sonyops.testcases.SearchLibraryPageTest@20140db9]" started-at="2021-04-27T18:34:41Z" name="ValidateStandalonePlayerIsStreaming" finished-at="2021-04-27T18:39:45Z" duration-ms="304145" status="SKIP">
           <exception class="java.lang.AssertionError">
             <message>
-              <![CDATA[expected [true] but found [false]]]>
+              <![CDATA[Streaming is not happening expected [true] but found [false]]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: expected [true] but found [false]
+              <![CDATA[java.lang.AssertionError: Streaming is not happening expected [true] but found [false]
 	at org.testng.Assert.fail(Assert.java:94)
 	at org.testng.Assert.failNotEquals(Assert.java:513)
 	at org.testng.Assert.assertTrue(Assert.java:42)
-	at org.testng.Assert.assertTrue(Assert.java:52)
-	at com.qa.sonyops.testcases.SearchLibraryPageTest.ValidateAuditTrialTabDetails(SearchLibraryPageTest.java:97)
+	at com.qa.sonyops.testcases.SearchLibraryPageTest.ValidateStandalonePlayerIsStreaming(SearchLibraryPageTest.java:66)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
 	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
 	at org.testng.internal.Invoker.invokeMethod(Invoker.java:645)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:851)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1177)
+	at org.testng.internal.Invoker.retryFailed(Invoker.java:998)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1200)
 	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
 	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
 	at org.testng.TestRunner.privateRun(TestRunner.java:756)
@@ -192,40 +155,138 @@
           </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- ValidateAuditTrialTabDetails -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.qa.sonyops.testcases.SearchLibraryPageTest@1ffaf86]" started-at="2021-04-23T15:22:36Z" name="tearDown" finished-at="2021-04-23T15:22:37Z" duration-ms="799" status="PASS">
+        </test-method> <!-- ValidateStandalonePlayerIsStreaming -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.qa.sonyops.testcases.SearchLibraryPageTest@20140db9]" started-at="2021-04-27T18:39:45Z" name="tearDown" finished-at="2021-04-27T18:39:46Z" duration-ms="806" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="SetUp()[pri:0, instance:com.qa.sonyops.testcases.SearchLibraryPageTest@1ffaf86]" started-at="2021-04-23T15:22:37Z" name="SetUp" finished-at="2021-04-23T15:22:49Z" duration-ms="12012" status="PASS">
+        <test-method is-config="true" signature="SetUp()[pri:0, instance:com.qa.sonyops.testcases.SearchLibraryPageTest@20140db9]" started-at="2021-04-27T18:39:46Z" name="SetUp" finished-at="2021-04-27T18:39:59Z" duration-ms="13268" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- SetUp -->
-        <test-method signature="ValidateEssenceTabDetails()[pri:7, instance:com.qa.sonyops.testcases.SearchLibraryPageTest@1ffaf86]" started-at="2021-04-23T15:22:49Z" name="ValidateEssenceTabDetails" finished-at="2021-04-23T15:22:56Z" duration-ms="7123" status="PASS">
+        <test-method signature="ValidateStandalonePlayerIsStreaming()[pri:2, instance:com.qa.sonyops.testcases.SearchLibraryPageTest@20140db9]" started-at="2021-04-27T18:39:59Z" name="ValidateStandalonePlayerIsStreaming" finished-at="2021-04-27T18:45:03Z" duration-ms="304106" status="FAIL">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[Streaming is not happening expected [true] but found [false]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: Streaming is not happening expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:94)
+	at org.testng.Assert.failNotEquals(Assert.java:513)
+	at org.testng.Assert.assertTrue(Assert.java:42)
+	at com.qa.sonyops.testcases.SearchLibraryPageTest.ValidateStandalonePlayerIsStreaming(SearchLibraryPageTest.java:66)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:645)
+	at org.testng.internal.Invoker.retryFailed(Invoker.java:998)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1200)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:756)
+	at org.testng.TestRunner.run(TestRunner.java:610)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:382)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1293)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1218)
+	at org.testng.TestNG.runSuites(TestNG.java:1133)
+	at org.testng.TestNG.run(TestNG.java:1104)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ValidateStandalonePlayerIsStreaming -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.qa.sonyops.testcases.SearchLibraryPageTest@20140db9]" started-at="2021-04-27T18:45:03Z" name="tearDown" finished-at="2021-04-27T18:45:04Z" duration-ms="871" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="SetUp()[pri:0, instance:com.qa.sonyops.testcases.SearchLibraryPageTest@20140db9]" started-at="2021-04-27T18:45:04Z" name="SetUp" finished-at="2021-04-27T18:45:20Z" duration-ms="15570" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- SetUp -->
+        <test-method signature="ValidateAssetDetailsIsDisplaying()[pri:3, instance:com.qa.sonyops.testcases.SearchLibraryPageTest@20140db9]" started-at="2021-04-27T18:45:20Z" name="ValidateAssetDetailsIsDisplaying" finished-at="2021-04-27T18:45:20Z" duration-ms="70" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ValidateAssetDetailsIsDisplaying -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.qa.sonyops.testcases.SearchLibraryPageTest@20140db9]" started-at="2021-04-27T18:45:20Z" name="tearDown" finished-at="2021-04-27T18:45:21Z" duration-ms="797" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="SetUp()[pri:0, instance:com.qa.sonyops.testcases.SearchLibraryPageTest@20140db9]" started-at="2021-04-27T18:45:21Z" name="SetUp" finished-at="2021-04-27T18:45:34Z" duration-ms="12871" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- SetUp -->
+        <test-method signature="ValidateInformationModeIsDiaplaying()[pri:4, instance:com.qa.sonyops.testcases.SearchLibraryPageTest@20140db9]" started-at="2021-04-27T18:45:34Z" name="ValidateInformationModeIsDiaplaying" finished-at="2021-04-27T18:45:35Z" duration-ms="731" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ValidateInformationModeIsDiaplaying -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.qa.sonyops.testcases.SearchLibraryPageTest@20140db9]" started-at="2021-04-27T18:45:35Z" name="tearDown" finished-at="2021-04-27T18:45:36Z" duration-ms="834" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="SetUp()[pri:0, instance:com.qa.sonyops.testcases.SearchLibraryPageTest@20140db9]" started-at="2021-04-27T18:45:36Z" name="SetUp" finished-at="2021-04-27T18:45:49Z" duration-ms="13244" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- SetUp -->
+        <test-method signature="ValidateMetaDataInAssetDetailsPopUp()[pri:5, instance:com.qa.sonyops.testcases.SearchLibraryPageTest@20140db9]" started-at="2021-04-27T18:45:49Z" name="ValidateMetaDataInAssetDetailsPopUp" finished-at="2021-04-27T18:45:52Z" duration-ms="2627" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ValidateMetaDataInAssetDetailsPopUp -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.qa.sonyops.testcases.SearchLibraryPageTest@20140db9]" started-at="2021-04-27T18:45:52Z" name="tearDown" finished-at="2021-04-27T18:45:53Z" duration-ms="762" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="SetUp()[pri:0, instance:com.qa.sonyops.testcases.SearchLibraryPageTest@20140db9]" started-at="2021-04-27T18:45:53Z" name="SetUp" finished-at="2021-04-27T18:46:06Z" duration-ms="13805" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- SetUp -->
+        <test-method signature="ValidateAuditTrialTabDetails()[pri:6, instance:com.qa.sonyops.testcases.SearchLibraryPageTest@20140db9]" started-at="2021-04-27T18:46:06Z" name="ValidateAuditTrialTabDetails" finished-at="2021-04-27T18:46:10Z" duration-ms="3566" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ValidateAuditTrialTabDetails -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.qa.sonyops.testcases.SearchLibraryPageTest@20140db9]" started-at="2021-04-27T18:46:10Z" name="tearDown" finished-at="2021-04-27T18:46:11Z" duration-ms="794" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="SetUp()[pri:0, instance:com.qa.sonyops.testcases.SearchLibraryPageTest@20140db9]" started-at="2021-04-27T18:46:11Z" name="SetUp" finished-at="2021-04-27T18:46:26Z" duration-ms="14658" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- SetUp -->
+        <test-method signature="ValidateEssenceTabDetails()[pri:7, instance:com.qa.sonyops.testcases.SearchLibraryPageTest@20140db9]" started-at="2021-04-27T18:46:26Z" name="ValidateEssenceTabDetails" finished-at="2021-04-27T18:46:29Z" duration-ms="3777" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ValidateEssenceTabDetails -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.qa.sonyops.testcases.SearchLibraryPageTest@1ffaf86]" started-at="2021-04-23T15:22:57Z" name="tearDown" finished-at="2021-04-23T15:22:58Z" duration-ms="829" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.qa.sonyops.testcases.SearchLibraryPageTest@20140db9]" started-at="2021-04-27T18:46:30Z" name="tearDown" finished-at="2021-04-27T18:46:30Z" duration-ms="773" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="SetUp()[pri:0, instance:com.qa.sonyops.testcases.SearchLibraryPageTest@1ffaf86]" started-at="2021-04-23T15:22:58Z" name="SetUp" finished-at="2021-04-23T15:23:09Z" duration-ms="11725" status="PASS">
+        <test-method is-config="true" signature="SetUp()[pri:0, instance:com.qa.sonyops.testcases.SearchLibraryPageTest@20140db9]" started-at="2021-04-27T18:46:30Z" name="SetUp" finished-at="2021-04-27T18:46:43Z" duration-ms="12641" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- SetUp -->
-        <test-method signature="ValidateOpsactionTab()[pri:8, instance:com.qa.sonyops.testcases.SearchLibraryPageTest@1ffaf86]" started-at="2021-04-23T15:23:09Z" name="ValidateOpsactionTab" finished-at="2021-04-23T15:23:13Z" duration-ms="3593" status="PASS">
+        <test-method signature="ValidateOpsactionTab()[pri:8, instance:com.qa.sonyops.testcases.SearchLibraryPageTest@20140db9]" started-at="2021-04-27T18:46:43Z" name="ValidateOpsactionTab" finished-at="2021-04-27T18:46:46Z" duration-ms="2563" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ValidateOpsactionTab -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.qa.sonyops.testcases.SearchLibraryPageTest@1ffaf86]" started-at="2021-04-23T15:23:14Z" name="tearDown" finished-at="2021-04-23T15:23:14Z" duration-ms="794" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.qa.sonyops.testcases.SearchLibraryPageTest@20140db9]" started-at="2021-04-27T18:46:46Z" name="tearDown" finished-at="2021-04-27T18:46:47Z" duration-ms="897" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="SetUp()[pri:0, instance:com.qa.sonyops.testcases.SearchLibraryPageTest@1ffaf86]" started-at="2021-04-23T15:23:14Z" name="SetUp" finished-at="2021-04-23T15:23:26Z" duration-ms="11573" status="PASS">
+        <test-method is-config="true" signature="SetUp()[pri:0, instance:com.qa.sonyops.testcases.SearchLibraryPageTest@20140db9]" started-at="2021-04-27T18:46:47Z" name="SetUp" finished-at="2021-04-27T18:47:00Z" duration-ms="13454" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- SetUp -->
-        <test-method signature="ValidateStreamingFromAssetDetailPopUp()[pri:9, instance:com.qa.sonyops.testcases.SearchLibraryPageTest@1ffaf86]" started-at="2021-04-23T15:23:26Z" name="ValidateStreamingFromAssetDetailPopUp" finished-at="2021-04-23T15:28:31Z" duration-ms="304902" status="FAIL">
+        <test-method signature="ValidateStreamingFromAssetDetailPopUp()[pri:9, instance:com.qa.sonyops.testcases.SearchLibraryPageTest@20140db9]" started-at="2021-04-27T18:47:00Z" name="ValidateStreamingFromAssetDetailPopUp" finished-at="2021-04-27T18:52:04Z" duration-ms="303797" status="SKIP">
           <exception class="java.lang.AssertionError">
             <message>
               <![CDATA[expected [true] but found [false]]]>
@@ -236,7 +297,7 @@
 	at org.testng.Assert.failNotEquals(Assert.java:513)
 	at org.testng.Assert.assertTrue(Assert.java:42)
 	at org.testng.Assert.assertTrue(Assert.java:52)
-	at com.qa.sonyops.testcases.SearchLibraryPageTest.ValidateStreamingFromAssetDetailPopUp(SearchLibraryPageTest.java:124)
+	at com.qa.sonyops.testcases.SearchLibraryPageTest.ValidateStreamingFromAssetDetailPopUp(SearchLibraryPageTest.java:134)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -268,39 +329,141 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ValidateStreamingFromAssetDetailPopUp -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.qa.sonyops.testcases.SearchLibraryPageTest@1ffaf86]" started-at="2021-04-23T15:28:31Z" name="tearDown" finished-at="2021-04-23T15:28:32Z" duration-ms="889" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.qa.sonyops.testcases.SearchLibraryPageTest@20140db9]" started-at="2021-04-27T18:52:04Z" name="tearDown" finished-at="2021-04-27T18:52:05Z" duration-ms="867" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="SetUp()[pri:0, instance:com.qa.sonyops.testcases.SearchLibraryPageTest@1ffaf86]" started-at="2021-04-23T15:28:32Z" name="SetUp" finished-at="2021-04-23T15:28:45Z" duration-ms="12440" status="PASS">
+        <test-method is-config="true" signature="SetUp()[pri:0, instance:com.qa.sonyops.testcases.SearchLibraryPageTest@20140db9]" started-at="2021-04-27T18:52:05Z" name="SetUp" finished-at="2021-04-27T18:52:20Z" duration-ms="15556" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- SetUp -->
-        <test-method signature="ValidateCartPageIsDisplaying()[pri:11, instance:com.qa.sonyops.testcases.SearchLibraryPageTest@1ffaf86]" started-at="2021-04-23T15:28:45Z" name="ValidateCartPageIsDisplaying" finished-at="2021-04-23T15:28:46Z" duration-ms="752" status="PASS">
+        <test-method signature="ValidateStreamingFromAssetDetailPopUp()[pri:9, instance:com.qa.sonyops.testcases.SearchLibraryPageTest@20140db9]" started-at="2021-04-27T18:52:20Z" name="ValidateStreamingFromAssetDetailPopUp" finished-at="2021-04-27T18:57:24Z" duration-ms="303815" status="SKIP">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[expected [true] but found [false]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:94)
+	at org.testng.Assert.failNotEquals(Assert.java:513)
+	at org.testng.Assert.assertTrue(Assert.java:42)
+	at org.testng.Assert.assertTrue(Assert.java:52)
+	at com.qa.sonyops.testcases.SearchLibraryPageTest.ValidateStreamingFromAssetDetailPopUp(SearchLibraryPageTest.java:134)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:645)
+	at org.testng.internal.Invoker.retryFailed(Invoker.java:998)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1200)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:756)
+	at org.testng.TestRunner.run(TestRunner.java:610)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:382)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1293)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1218)
+	at org.testng.TestNG.runSuites(TestNG.java:1133)
+	at org.testng.TestNG.run(TestNG.java:1104)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ValidateStreamingFromAssetDetailPopUp -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.qa.sonyops.testcases.SearchLibraryPageTest@20140db9]" started-at="2021-04-27T18:57:24Z" name="tearDown" finished-at="2021-04-27T18:57:25Z" duration-ms="957" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="SetUp()[pri:0, instance:com.qa.sonyops.testcases.SearchLibraryPageTest@20140db9]" started-at="2021-04-27T18:57:25Z" name="SetUp" finished-at="2021-04-27T18:57:39Z" duration-ms="13669" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- SetUp -->
+        <test-method signature="ValidateStreamingFromAssetDetailPopUp()[pri:9, instance:com.qa.sonyops.testcases.SearchLibraryPageTest@20140db9]" started-at="2021-04-27T18:57:39Z" name="ValidateStreamingFromAssetDetailPopUp" finished-at="2021-04-27T19:02:43Z" duration-ms="303843" status="FAIL">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[expected [true] but found [false]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:94)
+	at org.testng.Assert.failNotEquals(Assert.java:513)
+	at org.testng.Assert.assertTrue(Assert.java:42)
+	at org.testng.Assert.assertTrue(Assert.java:52)
+	at com.qa.sonyops.testcases.SearchLibraryPageTest.ValidateStreamingFromAssetDetailPopUp(SearchLibraryPageTest.java:134)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:645)
+	at org.testng.internal.Invoker.retryFailed(Invoker.java:998)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1200)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:756)
+	at org.testng.TestRunner.run(TestRunner.java:610)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:382)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1293)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1218)
+	at org.testng.TestNG.runSuites(TestNG.java:1133)
+	at org.testng.TestNG.run(TestNG.java:1104)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ValidateStreamingFromAssetDetailPopUp -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.qa.sonyops.testcases.SearchLibraryPageTest@20140db9]" started-at="2021-04-27T19:02:43Z" name="tearDown" finished-at="2021-04-27T19:02:44Z" duration-ms="955" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="SetUp()[pri:0, instance:com.qa.sonyops.testcases.SearchLibraryPageTest@20140db9]" started-at="2021-04-27T19:02:44Z" name="SetUp" finished-at="2021-04-27T19:02:57Z" duration-ms="13489" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- SetUp -->
+        <test-method signature="ValidateCartPageIsDisplaying()[pri:11, instance:com.qa.sonyops.testcases.SearchLibraryPageTest@20140db9]" started-at="2021-04-27T19:02:57Z" name="ValidateCartPageIsDisplaying" finished-at="2021-04-27T19:02:58Z" duration-ms="772" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ValidateCartPageIsDisplaying -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.qa.sonyops.testcases.SearchLibraryPageTest@1ffaf86]" started-at="2021-04-23T15:28:46Z" name="tearDown" finished-at="2021-04-23T15:28:47Z" duration-ms="801" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.qa.sonyops.testcases.SearchLibraryPageTest@20140db9]" started-at="2021-04-27T19:02:59Z" name="tearDown" finished-at="2021-04-27T19:02:59Z" duration-ms="762" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="SetUp()[pri:0, instance:com.qa.sonyops.testcases.SearchLibraryPageTest@1ffaf86]" started-at="2021-04-23T15:28:47Z" name="SetUp" finished-at="2021-04-23T15:28:59Z" duration-ms="12323" status="PASS">
+        <test-method is-config="true" signature="SetUp()[pri:0, instance:com.qa.sonyops.testcases.SearchLibraryPageTest@20140db9]" started-at="2021-04-27T19:02:59Z" name="SetUp" finished-at="2021-04-27T19:03:11Z" duration-ms="12059" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- SetUp -->
-        <test-method signature="ValidateCartCount_WithAssetsAdded()[pri:12, instance:com.qa.sonyops.testcases.SearchLibraryPageTest@1ffaf86]" started-at="2021-04-23T15:28:59Z" name="ValidateCartCount_WithAssetsAdded" finished-at="2021-04-23T15:29:00Z" duration-ms="722" status="PASS">
+        <test-method signature="ValidateCartCount_WithAssetsAdded()[pri:12, instance:com.qa.sonyops.testcases.SearchLibraryPageTest@20140db9]" started-at="2021-04-27T19:03:11Z" name="ValidateCartCount_WithAssetsAdded" finished-at="2021-04-27T19:03:12Z" duration-ms="705" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ValidateCartCount_WithAssetsAdded -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.qa.sonyops.testcases.SearchLibraryPageTest@1ffaf86]" started-at="2021-04-23T15:29:01Z" name="tearDown" finished-at="2021-04-23T15:29:02Z" duration-ms="783" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.qa.sonyops.testcases.SearchLibraryPageTest@20140db9]" started-at="2021-04-27T19:03:12Z" name="tearDown" finished-at="2021-04-27T19:03:13Z" duration-ms="763" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="SetUp()[pri:0, instance:com.qa.sonyops.testcases.SearchLibraryPageTest@1ffaf86]" started-at="2021-04-23T15:29:02Z" name="SetUp" finished-at="2021-04-23T15:29:15Z" duration-ms="13521" status="PASS">
+        <test-method is-config="true" signature="SetUp()[pri:0, instance:com.qa.sonyops.testcases.SearchLibraryPageTest@20140db9]" started-at="2021-04-27T19:03:13Z" name="SetUp" finished-at="2021-04-27T19:03:25Z" duration-ms="12210" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- SetUp -->
-        <test-method signature="ValidateFilterOptionsInSearchLibrary()[pri:13, instance:com.qa.sonyops.testcases.SearchLibraryPageTest@1ffaf86]" started-at="2021-04-23T15:29:15Z" name="ValidateFilterOptionsInSearchLibrary" finished-at="2021-04-23T15:29:18Z" duration-ms="2476" status="FAIL">
+        <test-method signature="ValidateFilterOptionsInSearchLibrary()[pri:13, instance:com.qa.sonyops.testcases.SearchLibraryPageTest@20140db9]" started-at="2021-04-27T19:03:25Z" name="ValidateFilterOptionsInSearchLibrary" finished-at="2021-04-27T19:03:28Z" duration-ms="2503" status="SKIP">
           <exception class="java.lang.AssertionError">
             <message>
               <![CDATA[All the filter options are not displaying expected [9] but found [5]]]>
@@ -312,7 +475,7 @@
 	at org.testng.Assert.assertEqualsImpl(Assert.java:135)
 	at org.testng.Assert.assertEquals(Assert.java:116)
 	at org.testng.Assert.assertEquals(Assert.java:389)
-	at com.qa.sonyops.testcases.SearchLibraryPageTest.ValidateFilterOptionsInSearchLibrary(SearchLibraryPageTest.java:154)
+	at com.qa.sonyops.testcases.SearchLibraryPageTest.ValidateFilterOptionsInSearchLibrary(SearchLibraryPageTest.java:168)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -344,75 +507,179 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ValidateFilterOptionsInSearchLibrary -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.qa.sonyops.testcases.SearchLibraryPageTest@1ffaf86]" started-at="2021-04-23T15:29:18Z" name="tearDown" finished-at="2021-04-23T15:29:19Z" duration-ms="801" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.qa.sonyops.testcases.SearchLibraryPageTest@20140db9]" started-at="2021-04-27T19:03:28Z" name="tearDown" finished-at="2021-04-27T19:03:29Z" duration-ms="932" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="SetUp()[pri:0, instance:com.qa.sonyops.testcases.SearchLibraryPageTest@1ffaf86]" started-at="2021-04-23T15:29:19Z" name="SetUp" finished-at="2021-04-23T15:29:32Z" duration-ms="13005" status="PASS">
+        <test-method is-config="true" signature="SetUp()[pri:0, instance:com.qa.sonyops.testcases.SearchLibraryPageTest@20140db9]" started-at="2021-04-27T19:03:29Z" name="SetUp" finished-at="2021-04-27T19:03:40Z" duration-ms="11124" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- SetUp -->
-        <test-method signature="ValidateContentsCount()[pri:14, instance:com.qa.sonyops.testcases.SearchLibraryPageTest@1ffaf86]" started-at="2021-04-23T15:29:32Z" name="ValidateContentsCount" finished-at="2021-04-23T15:29:37Z" duration-ms="4502" status="PASS">
+        <test-method signature="ValidateFilterOptionsInSearchLibrary()[pri:13, instance:com.qa.sonyops.testcases.SearchLibraryPageTest@20140db9]" started-at="2021-04-27T19:03:40Z" name="ValidateFilterOptionsInSearchLibrary" finished-at="2021-04-27T19:03:42Z" duration-ms="2459" status="SKIP">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[All the filter options are not displaying expected [9] but found [5]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: All the filter options are not displaying expected [9] but found [5]
+	at org.testng.Assert.fail(Assert.java:94)
+	at org.testng.Assert.failNotEquals(Assert.java:513)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:135)
+	at org.testng.Assert.assertEquals(Assert.java:116)
+	at org.testng.Assert.assertEquals(Assert.java:389)
+	at com.qa.sonyops.testcases.SearchLibraryPageTest.ValidateFilterOptionsInSearchLibrary(SearchLibraryPageTest.java:168)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:645)
+	at org.testng.internal.Invoker.retryFailed(Invoker.java:998)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1200)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:756)
+	at org.testng.TestRunner.run(TestRunner.java:610)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:382)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1293)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1218)
+	at org.testng.TestNG.runSuites(TestNG.java:1133)
+	at org.testng.TestNG.run(TestNG.java:1104)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ValidateFilterOptionsInSearchLibrary -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.qa.sonyops.testcases.SearchLibraryPageTest@20140db9]" started-at="2021-04-27T19:03:42Z" name="tearDown" finished-at="2021-04-27T19:03:43Z" duration-ms="774" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="SetUp()[pri:0, instance:com.qa.sonyops.testcases.SearchLibraryPageTest@20140db9]" started-at="2021-04-27T19:03:43Z" name="SetUp" finished-at="2021-04-27T19:03:55Z" duration-ms="11725" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- SetUp -->
+        <test-method signature="ValidateFilterOptionsInSearchLibrary()[pri:13, instance:com.qa.sonyops.testcases.SearchLibraryPageTest@20140db9]" started-at="2021-04-27T19:03:55Z" name="ValidateFilterOptionsInSearchLibrary" finished-at="2021-04-27T19:03:57Z" duration-ms="2446" status="FAIL">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[All the filter options are not displaying expected [9] but found [5]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: All the filter options are not displaying expected [9] but found [5]
+	at org.testng.Assert.fail(Assert.java:94)
+	at org.testng.Assert.failNotEquals(Assert.java:513)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:135)
+	at org.testng.Assert.assertEquals(Assert.java:116)
+	at org.testng.Assert.assertEquals(Assert.java:389)
+	at com.qa.sonyops.testcases.SearchLibraryPageTest.ValidateFilterOptionsInSearchLibrary(SearchLibraryPageTest.java:168)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:645)
+	at org.testng.internal.Invoker.retryFailed(Invoker.java:998)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1200)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:756)
+	at org.testng.TestRunner.run(TestRunner.java:610)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:382)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1293)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1218)
+	at org.testng.TestNG.runSuites(TestNG.java:1133)
+	at org.testng.TestNG.run(TestNG.java:1104)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ValidateFilterOptionsInSearchLibrary -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.qa.sonyops.testcases.SearchLibraryPageTest@20140db9]" started-at="2021-04-27T19:03:58Z" name="tearDown" finished-at="2021-04-27T19:03:58Z" duration-ms="801" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="SetUp()[pri:0, instance:com.qa.sonyops.testcases.SearchLibraryPageTest@20140db9]" started-at="2021-04-27T19:03:58Z" name="SetUp" finished-at="2021-04-27T19:04:11Z" duration-ms="12924" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- SetUp -->
+        <test-method signature="ValidateContentsCount()[pri:14, instance:com.qa.sonyops.testcases.SearchLibraryPageTest@20140db9]" started-at="2021-04-27T19:04:11Z" name="ValidateContentsCount" finished-at="2021-04-27T19:04:16Z" duration-ms="4492" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ValidateContentsCount -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.qa.sonyops.testcases.SearchLibraryPageTest@1ffaf86]" started-at="2021-04-23T15:29:37Z" name="tearDown" finished-at="2021-04-23T15:29:38Z" duration-ms="808" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.qa.sonyops.testcases.SearchLibraryPageTest@20140db9]" started-at="2021-04-27T19:04:16Z" name="tearDown" finished-at="2021-04-27T19:04:17Z" duration-ms="799" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="SetUp()[pri:0, instance:com.qa.sonyops.testcases.SearchLibraryPageTest@1ffaf86]" started-at="2021-04-23T15:29:38Z" name="SetUp" finished-at="2021-04-23T15:29:50Z" duration-ms="12386" status="PASS">
+        <test-method is-config="true" signature="SetUp()[pri:0, instance:com.qa.sonyops.testcases.SearchLibraryPageTest@20140db9]" started-at="2021-04-27T19:04:17Z" name="SetUp" finished-at="2021-04-27T19:04:29Z" duration-ms="11631" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- SetUp -->
-        <test-method signature="ValidateSortOptionsIsDisplaying()[pri:15, instance:com.qa.sonyops.testcases.SearchLibraryPageTest@1ffaf86]" started-at="2021-04-23T15:29:50Z" name="ValidateSortOptionsIsDisplaying" finished-at="2021-04-23T15:29:50Z" duration-ms="33" status="PASS">
+        <test-method signature="ValidateSortOptionsIsDisplaying()[pri:15, instance:com.qa.sonyops.testcases.SearchLibraryPageTest@20140db9]" started-at="2021-04-27T19:04:29Z" name="ValidateSortOptionsIsDisplaying" finished-at="2021-04-27T19:04:29Z" duration-ms="35" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ValidateSortOptionsIsDisplaying -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.qa.sonyops.testcases.SearchLibraryPageTest@1ffaf86]" started-at="2021-04-23T15:29:51Z" name="tearDown" finished-at="2021-04-23T15:29:52Z" duration-ms="816" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.qa.sonyops.testcases.SearchLibraryPageTest@20140db9]" started-at="2021-04-27T19:04:29Z" name="tearDown" finished-at="2021-04-27T19:04:30Z" duration-ms="812" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="SetUp()[pri:0, instance:com.qa.sonyops.testcases.SearchLibraryPageTest@1ffaf86]" started-at="2021-04-23T15:29:52Z" name="SetUp" finished-at="2021-04-23T15:30:05Z" duration-ms="13297" status="PASS">
+        <test-method is-config="true" signature="SetUp()[pri:0, instance:com.qa.sonyops.testcases.SearchLibraryPageTest@20140db9]" started-at="2021-04-27T19:04:30Z" name="SetUp" finished-at="2021-04-27T19:04:42Z" duration-ms="12050" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- SetUp -->
-        <test-method signature="ValidateSortOptionsInSearchLibrary()[pri:16, instance:com.qa.sonyops.testcases.SearchLibraryPageTest@1ffaf86]" started-at="2021-04-23T15:30:05Z" name="ValidateSortOptionsInSearchLibrary" finished-at="2021-04-23T15:30:05Z" duration-ms="272" status="PASS">
+        <test-method signature="ValidateSortOptionsInSearchLibrary()[pri:16, instance:com.qa.sonyops.testcases.SearchLibraryPageTest@20140db9]" started-at="2021-04-27T19:04:42Z" name="ValidateSortOptionsInSearchLibrary" finished-at="2021-04-27T19:04:42Z" duration-ms="495" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ValidateSortOptionsInSearchLibrary -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.qa.sonyops.testcases.SearchLibraryPageTest@1ffaf86]" started-at="2021-04-23T15:30:06Z" name="tearDown" finished-at="2021-04-23T15:30:07Z" duration-ms="811" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.qa.sonyops.testcases.SearchLibraryPageTest@20140db9]" started-at="2021-04-27T19:04:43Z" name="tearDown" finished-at="2021-04-27T19:04:43Z" duration-ms="812" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="SetUp()[pri:0, instance:com.qa.sonyops.testcases.SearchLibraryPageTest@1ffaf86]" started-at="2021-04-23T15:30:07Z" name="SetUp" finished-at="2021-04-23T15:30:20Z" duration-ms="13379" status="PASS">
+        <test-method is-config="true" signature="SetUp()[pri:0, instance:com.qa.sonyops.testcases.SearchLibraryPageTest@20140db9]" started-at="2021-04-27T19:04:43Z" name="SetUp" finished-at="2021-04-27T19:04:57Z" duration-ms="13816" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- SetUp -->
-        <test-method signature="ValidateAssetsAreDisplayingInListView()[pri:17, instance:com.qa.sonyops.testcases.SearchLibraryPageTest@1ffaf86]" started-at="2021-04-23T15:30:20Z" name="ValidateAssetsAreDisplayingInListView" finished-at="2021-04-23T15:30:20Z" duration-ms="30" status="PASS">
+        <test-method signature="ValidateAssetsAreDisplayingInListView()[pri:17, instance:com.qa.sonyops.testcases.SearchLibraryPageTest@20140db9]" started-at="2021-04-27T19:04:57Z" name="ValidateAssetsAreDisplayingInListView" finished-at="2021-04-27T19:04:57Z" duration-ms="45" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ValidateAssetsAreDisplayingInListView -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.qa.sonyops.testcases.SearchLibraryPageTest@1ffaf86]" started-at="2021-04-23T15:30:21Z" name="tearDown" finished-at="2021-04-23T15:30:22Z" duration-ms="792" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.qa.sonyops.testcases.SearchLibraryPageTest@20140db9]" started-at="2021-04-27T19:04:58Z" name="tearDown" finished-at="2021-04-27T19:04:58Z" duration-ms="771" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="SetUp()[pri:0, instance:com.qa.sonyops.testcases.SearchLibraryPageTest@1ffaf86]" started-at="2021-04-23T15:30:22Z" name="SetUp" finished-at="2021-04-23T15:30:35Z" duration-ms="12778" status="PASS">
+        <test-method is-config="true" signature="SetUp()[pri:0, instance:com.qa.sonyops.testcases.SearchLibraryPageTest@20140db9]" started-at="2021-04-27T19:04:58Z" name="SetUp" finished-at="2021-04-27T19:05:10Z" duration-ms="11451" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- SetUp -->
-        <test-method signature="ValidateAssetsAreDisplayingInGridView()[pri:18, instance:com.qa.sonyops.testcases.SearchLibraryPageTest@1ffaf86]" started-at="2021-04-23T15:30:35Z" name="ValidateAssetsAreDisplayingInGridView" finished-at="2021-04-23T15:30:35Z" duration-ms="147" status="PASS">
+        <test-method signature="ValidateAssetsAreDisplayingInGridView()[pri:18, instance:com.qa.sonyops.testcases.SearchLibraryPageTest@20140db9]" started-at="2021-04-27T19:05:10Z" name="ValidateAssetsAreDisplayingInGridView" finished-at="2021-04-27T19:05:10Z" duration-ms="134" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ValidateAssetsAreDisplayingInGridView -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.qa.sonyops.testcases.SearchLibraryPageTest@1ffaf86]" started-at="2021-04-23T15:30:36Z" name="tearDown" finished-at="2021-04-23T15:30:36Z" duration-ms="826" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.qa.sonyops.testcases.SearchLibraryPageTest@20140db9]" started-at="2021-04-27T19:05:10Z" name="tearDown" finished-at="2021-04-27T19:05:11Z" duration-ms="727" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="endReport()[pri:0, instance:com.qa.sonyops.testcases.SearchLibraryPageTest@1ffaf86]" started-at="2021-04-23T15:30:36Z" name="endReport" finished-at="2021-04-23T15:30:37Z" duration-ms="228" status="PASS">
+        <test-method is-config="true" signature="endReport()[pri:0, instance:com.qa.sonyops.testcases.SearchLibraryPageTest@20140db9]" started-at="2021-04-27T19:05:11Z" name="endReport" finished-at="2021-04-27T19:05:11Z" duration-ms="238" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- endReport -->
-        <test-method is-config="true" signature="DeleteTemporaryFolder()[pri:0, instance:com.qa.sonyops.testcases.SearchLibraryPageTest@1ffaf86]" started-at="2021-04-23T15:30:37Z" name="DeleteTemporaryFolder" finished-at="2021-04-23T15:30:37Z" duration-ms="194" status="PASS">
+        <test-method is-config="true" signature="DeleteTemporaryFolder()[pri:0, instance:com.qa.sonyops.testcases.SearchLibraryPageTest@20140db9]" started-at="2021-04-27T19:05:11Z" name="DeleteTemporaryFolder" finished-at="2021-04-27T19:05:11Z" duration-ms="194" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- DeleteTemporaryFolder -->
